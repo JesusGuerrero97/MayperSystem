@@ -65,15 +65,15 @@
                <img class="notification_image" src="../Public/img/exit.png" alt="Cerrar sesión" title="Cerrar Sesion">
           </figure>
       </div>
-        <!--<div class="ot">
-          Notificaciones
-        </div>-->
+      <div class="container">
+          <div class="content content-active">
+            Hola Como estas
+          </div>
+          <div class="content">
+              Hola es el body 2
+          </div>
       </div>
-    <div id="body">
-      Hola Como estas
-    </div>
-    <div class="body2">
-    </div>
   </body>
   <script src="../Public/js/modal.js"></script>
+  <script src="../Public/js/p_tabs_menu.js"></script>
 </html>
