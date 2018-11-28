@@ -1,0 +1,195 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    border:none;
+    width: 100%;
+    background-color: #ccc
+}
+#sechead{
+    /*position: fixed;*/
+    height: 20vh;
+    width: 100%;
+    background-color: #0A3C78;
+    background-size: cover;
+    display: inline-block;
+    background-attachment: fixed;
+}
+#body{
+    /*position: fixed;*/
+    margin-top: 1.8vh;
+    height: 77.2vh;
+    width: 92%;
+    background-color: transparent;
+    display: inline-block;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    float: left;
+    position: relative;
+
+}
+.body2{
+    /*position: fixed;*/
+    margin-top: 1.8vh;
+    height: 77.2vh;
+    width: 82%;
+    background-color: black;
+    display: none;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    float: left;
+    position: relative;
+}
+#noti
+{
+  height: 80.1vh;
+  width: 8%;
+  background-color: #333B3E;/*333B3E*/
+  background-size: cover;
+  display: inline-block;
+  background-attachment: fixed;
+  float: left;
+  position:relative;
+  margin-top: -1.1vh;
+  padding:1%;
+  overflow-y: visible;
+  overflow-x: visible;
+}
+input[type="button"]
+{
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border-radius: 8px;
+  margin-left:2%;
+}
+div.Consulta{
+  display: block;
+}
+div.ot {
+  margin-top: 20%;
+  background-color: #5B6569;
+  width: 100%;
+  height: 100px;
+  color: white;
+}
+div.information
+{
+  width: 25%;
+  margin-top: 2%;
+  float: right;
+  color: white;
+
+}
+div.in
+{
+  display: inline-block;
+  background-color: #1054A5;
+  margin-left: 1%;
+  width: 7%;
+  height: 110px;
+  margin-top: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+}
+div.inprincipal
+{
+  margin-left: 3%;
+}
+div.in:hover
+{
+  background-color: #0A468D;
+}
+div.in:active
+{
+  background-color: #1054A5 !important;
+}
+div.logoPrincipal
+{
+  float: left;
+  padding: 1%;
+}
+img.logo
+{
+  padding-left:30px;
+  width: 70%;
+  margin-top: 25%;
+}
+img.perfil
+{
+  width: 20%;
+  right: 0;
+  cursor: pointer;
+}
+p.datos
+{
+  color: white;
+  text-align: left;
+  font-size: 16px;
+  margin-top: 6%;
+}
+p.vi
+{
+  margin-top: 17%;
+  text-align: center;
+  padding: auto;
+  color: white;
+}
+p.r{
+  margin-right:10%;
+  float: right;
+}
+.notification-pane{
+    border-radius: 32px;
+    width: 70%;
+    height: 8vh;
+    margin-top: 3vh;
+    background-color: #5B6569;
+    cursor: pointer;
+    margin-left: 1vh;
+}
+div.notification-pane:hover{
+  background-color: #50575A;
+}
+div.notification-pane:active
+{
+  background-color: #5B6569;
+}
+.exit{
+    border-radius: 32px;
+    width: 70%;
+    margin-top: 2vh;
+    height: 8vh;
+    background-color: #831F16;
+    cursor: pointer;
+    margin-left: 1vh;
+}
+.exit:hover
+{
+  background-color: #661811;
+}
+.exit:active{
+  background-color: #831F16;
+}
+figure{
+    width: 100%;
+    height: 70%;
+    color: white;
+    margin: 10%;
+    padding: 10%;
+    /*margin-left:10%;
+    padding-top: 10%;*/
+}
+.notification_image{
+    width: 35px;
+    float: left;
+
+}
+div.ce
+{
+  margin-left: 15%;
+
+}
