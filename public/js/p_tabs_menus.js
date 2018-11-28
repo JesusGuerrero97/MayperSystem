@@ -1,8 +1,7 @@
 
    document.getElementById("sechead").addEventListener('click', (e) => {
        
-       
-       console.log(e.target.parentElement);
+    
        if(e.target.classList.contains('tab')){
           
             changeTab(e.target);
