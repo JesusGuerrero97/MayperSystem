@@ -59,12 +59,29 @@ p{
     display:table;
 }
 
+/*
 .figure-profile img{
     float: right;
-    width: 80%;
+    width: 11vh;
+    height: 11vh; 
     padding: 1%;
+    background-size: contain;
     border-radius: 50%;
     display:table-cell;
+}
+*/
+.figure-profile div{
+    width: 11vh;
+    height: 11vh;
+    background-color: rgba(0,0,0,0.5);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    float: right;
+    margin-right: 5%;
+    border: #FFF solid 2px;
 }
 
 .figure-profile figcaption{    
@@ -152,7 +169,7 @@ p{
     height: 86vh;
     background-color: transparent;
     margin-left: 18%;
-    margin-top: -6vh;
+    margin-top: -5vh;
     box-sizing: content-box;
     margin-bottom: 0;
     user-select: none;

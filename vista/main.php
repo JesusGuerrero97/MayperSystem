@@ -8,6 +8,11 @@ session_start();
     <title>Main page</title>
     <link rel="stylesheet" href="../public/css/p_main.css">
     <link rel="stylesheet" href="../public/css/p_modal.css">
+    <style type="text/css">
+        .image-profile{
+            background-image: url('<?php echo $_SESSION['user']['userFoto']; ?>');
+        }
+    </style>
 </head>
 <body style="background-color: #CCC; margin: 0">
     
@@ -29,7 +34,8 @@ session_start();
         
         <div class="profile-information">
             <figure class="figure-profile">
-                <img src="<?php echo $_SESSION['user']["userFoto"]; ?>" alt="">
+                <div class="image-profile">
+                </div>
                 <figcaption>
                    <?php 
                         echo $_SESSION['user']["userNombre"]." ".$_SESSION['user']['userApellido'];

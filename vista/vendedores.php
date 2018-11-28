@@ -8,16 +8,34 @@
     <title>Vendedores</title>
     <link rel="stylesheet" href="../public  /css/estilo.css">
     <link rel="stylesheet" href="../public/css/modal.css">
+    
+    <style type="text/css">
+        .image-profile{
+            background-image: url('<?php echo $_SESSION['user']['userFoto']; ?>');
+        }
+    </style>
+    
   </head>
   <body>
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
       <div class="in ce"><img class="logo" src="../Public/img/solicitudes.png" alt=""><p class="vi">Solicitudes</p></div>
       <div class="in"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Productos</p></div>
-      <div class="information">
-        <img  class="perfil" src="<?php echo $_SESSION['user']['userFoto']; ?>" alt="usuario">
-        <p class="r"><?php echo $_SESSION['user']['userNombre']." ".$_SESSION['user']['userApellido']; ?> <br>Puesto: <?php echo $_SESSION['user']['userTipo']; ?></p>
-      </div>
+      
+      <div class="profile-information">
+            <figure class="figure-profile">
+                <div class="image-profile">
+                </div>
+                <figcaption>
+                   <?php 
+                        echo $_SESSION['user']["userNombre"]." ".$_SESSION['user']['userApellido'];
+                        echo "<br/>";
+                        echo "Puesto: ".$_SESSION['user']['userTipo'];
+                    ?>
+                </figcaption>
+            </figure>
+        </div>
+      
     </div>
     <div id="noti">
       <div class="cont">
