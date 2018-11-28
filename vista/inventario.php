@@ -19,12 +19,12 @@
   <body>
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
-      <div class="in inprincipal"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Equipos</p></div>
-      <div class="in"><img class="logo" src="../Public/img/ventas.png" alt=""><p class="vi">Ventas</p></div>
-      <div class="in"><img class="logo" src="../Public/img/Demo.png" alt=""><p class="vi">Demos</p></div>
-      <div class="in"><img class="logo" src="../Public/img/Reportes.png" alt=""><p class="vi">Reportes</p></div>
-      <div class="in"><img class="logo" src="../Public/img/config.png" alt=""><p class="vi">Configuración</p></div>
-      <div class="in"><img class="logo" src="../Public/img/respaldo.png" alt=""><p class="vi">Respaldo</p></div>
+      <div class="tab in inprincipal"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Equipos</p></div>
+      <div class="tab in"><img class="logo" src="../Public/img/ventas.png" alt=""><p class="vi">Ventas</p></div>
+      <div class="tab in"><img class="logo" src="../Public/img/Demo.png" alt=""><p class="vi">Demos</p></div>
+      <div class="tab in"><img class="logo" src="../Public/img/Reportes.png" alt=""><p class="vi">Reportes</p></div>
+      <div class="tab in"><img class="logo" src="../Public/img/config.png" alt=""><p class="vi">Configuración</p></div>
+      <div class="tab in"><img class="logo" src="../Public/img/respaldo.png" alt=""><p class="vi">Respaldo</p></div>
 
         <div class="profile-information">
             <figure class="figure-profile">
@@ -65,6 +65,7 @@
                <img class="notification_image" src="../Public/img/exit.png" alt="Cerrar sesión" title="Cerrar Sesion">
           </figure>
       </div>
+    </div>
       <div class="container">
           <div class="content content-active">
             Hola Como estas
@@ -72,8 +73,20 @@
           <div class="content">
               Hola es el body 2
           </div>
+          <div class="content">
+              Hola es el body 3
+          </div>
+          <div class="content">
+              Hola es el body 4
+          </div>
+          <div class="content">
+                Hola es el body 5
+          </div>
+          <div class="content">
+              Hola es el body 6
+          </div>
       </div>
   </body>
   <script src="../Public/js/modal.js"></script>
-  <script src="../Public/js/p_tabs_menu.js"></script>
+  <script src="../Public/js/p_tabs_menus.js"></script>
 </html>

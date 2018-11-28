@@ -8,13 +8,13 @@
     <title>Vendedores</title>
     <link rel="stylesheet" href="../public  /css/estilo.css">
     <link rel="stylesheet" href="../public/css/modal.css">
-    
+
     <style type="text/css">
         .image-profile{
             background-image: url('<?php echo $_SESSION['user']['userFoto']; ?>');
         }
     </style>
-    
+
   </head>
   <body>
     <div id="sechead">
@@ -22,7 +22,7 @@
           <img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper">
       </div>
 
-           
+
         <div class="tab in ce">
             <img class="logo" src="../Public/img/solicitudes.png" alt="">
             <p class="vi">Solicitudes</p>
@@ -31,13 +31,13 @@
             <img class="logo" src="../Public/img/equipos.png" alt="">
             <p class="vi">Productos</p>
         </div>
-      
+
       <div class="profile-information">
             <figure class="figure-profile">
                 <div class="image-profile">
                 </div>
                 <figcaption>
-                   <?php 
+                   <?php
                         echo $_SESSION['user']["userNombre"]." ".$_SESSION['user']['userApellido'];
                         echo "<br/>";
                         echo "Puesto: ".$_SESSION['user']['userTipo'];
@@ -45,7 +45,6 @@
                 </figcaption>
             </figure>
         </div>
-      
     </div>
     <div id="noti">
       <div class="cont">
@@ -77,7 +76,7 @@
         </div>-->
       </div>
     </div>
-   
+
     <div class="container">
         <div class="content content-active">
           Hola Como estas
@@ -87,6 +86,6 @@
         </div>
     </div>
   </body>
-  <script src="../Public/js/modal.js"></script>
+  <script src="../public/js/modal.js"></script>
   <script src="../public/js/p_tabs_menus.js"></script>
 </html>
