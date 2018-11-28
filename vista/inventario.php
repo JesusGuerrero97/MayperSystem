@@ -68,7 +68,12 @@
       <div class="container">
           <div class="content content-active">
             <div class="inv">
-              <p>Inventario Principal</p>
+              <p class="t">Inventario Principal <span class="t2">Mayper Medical</span></p>
+            </div>
+            <div class="db">
+              <p class="tp">Configuración de Productos</p>
+              <a href=""> <input type="button" class="add" name="" value="+ Productos"> </a>
+              <p> Mostrar <select> <option value="10">10</option> <option value="15">15</option> </select> </p>
             </div>
           </div>
           <div class="content">
