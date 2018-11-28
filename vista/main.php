@@ -24,7 +24,7 @@ session_start();
     
     <section id="cortain">
         <div class="image-logo">
-           <img src="../public/img/logo_white.png" alt="Logo mayper">
+           <img src="../public/img/logo.png" alt="Logo mayper">
         </div>
         
         <div class="profile-information">
