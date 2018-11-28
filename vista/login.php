@@ -32,7 +32,7 @@ session_start();
     <div id="container">
        
         <div class="content content-active">
-            <img src="../public/img/logo.png" alt="Logo mayper">
+            <img src="../public/img/logo2.png" alt="Logo mayper">
             
             <?php echo "<p class='error-mensaje'>$Mensaje</p>"; ?>
             
@@ -49,7 +49,7 @@ session_start();
         
         <div class="content">
        
-            <img src="../public/img/logo.png" alt="Logo mayper">
+            <img src="../public/img/logo2.png" alt="Logo mayper">
             <h2>Recuperar contraseña</h2>
             
             <form action="#" method="post">
