@@ -237,3 +237,25 @@ div.ce
     vertical-align: middle;
     display:table-cell;
 }
+
+
+/* contenedor de tabs*/
+
+.container{
+    position: relative;
+}
+.content{
+    margin-top: 1.8vh;
+    height: 77.2vh;
+    width: 92%;
+    background-color: transparent;
+    display: inline-block;
+    background-size: cover;
+    float: left;
+    position: absolute;
+    border: #f25f25 solid 1px;
+    display: none;
+}
+.content-active{
+    display: inline-block;
+}
