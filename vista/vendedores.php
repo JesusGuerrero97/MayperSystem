@@ -88,32 +88,5 @@
     </div>
   </body>
   <script src="../Public/js/modal.js"></script>
-  <script type="text/javascript">
-   document.getElementById("sechead").addEventListener('click', (e) => {
-       
-       
-       console.log(e.target.parentElement);
-       if(e.target.classList.contains('tab')){
-          
-            changeTab(e.target);
-           
-       }else if(e.target.parentElement.classList.contains('tab')){
-            
-           changeTab(e.target.parentElement);
-       }
-   });
-      
-      function changeTab(e){
-          let tabs = Array.prototype.slice.apply(document.querySelectorAll('.tab'));
-           
-           let contents = Array.prototype.slice.apply(document.querySelectorAll('.content'));
-           
-           let i = tabs.indexOf(e);
-    
-           
-           contents.map(panel => panel.classList.remove('content-active'));
-//          
-           contents[i].classList.add('content-active');
-      }
-</script>
+  <script src="../public/js/p_tabs_menus.js"></script>
 </html>
