@@ -11,7 +11,7 @@
 //        $database ="db751330837";
 //        $username="dbo751330837";
 //        $password="svyifEJPLlQmjjTMdiMN";
-        $hostname ="localhost";
+        $hostname ="10.0.0.19";
         $database ="sistemamayper2";
         $username="root";
         $password="Thegreenday.1";
