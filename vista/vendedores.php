@@ -18,9 +18,19 @@
   </head>
   <body>
     <div id="sechead">
-      <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
-      <div class="in ce"><img class="logo" src="../Public/img/solicitudes.png" alt=""><p class="vi">Solicitudes</p></div>
-      <div class="in"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Productos</p></div>
+      <div class="logoPrincipal">
+          <img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper">
+      </div>
+
+           
+        <div class="tab in ce">
+            <img class="logo" src="../Public/img/solicitudes.png" alt="">
+            <p class="vi">Solicitudes</p>
+        </div>
+        <div class="tab in">
+            <img class="logo" src="../Public/img/equipos.png" alt="">
+            <p class="vi">Productos</p>
+        </div>
       
       <div class="profile-information">
             <figure class="figure-profile">
@@ -67,11 +77,33 @@
         </div>-->
       </div>
     </div>
-    <div id="body">
-      Hola Como estas
-    </div>
-    <div class="body2">
+   
+    <div class="container">
+        <div class="content content-active">
+          Hola Como estas
+        </div>
+        <div class="content">
+            Hola es el body 2
+        </div>
     </div>
   </body>
   <script src="../Public/js/modal.js"></script>
+  <script type="text/javascript">
+   document.getElementById("sechead").addEventListener('click', (e) => {
+       
+       
+       if(e.target.classList.contains('tab')){
+          let tabs = Array.prototype.slice.apply(document.querySelectorAll('.tab'));
+           
+           let contents = Array.prototype.slice.apply(document.querySelectorAll('.content'));
+           
+           let i = tabs.indexOf(e.target);
+    
+           
+           contents.map(panel => panel.classList.remove('content-active'));
+//          
+           contents[i].classList.add('content-active');
+        }
+   });
+</script>
 </html>

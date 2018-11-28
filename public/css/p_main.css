@@ -59,17 +59,6 @@ p{
     display:table;
 }
 
-/*
-.figure-profile img{
-    float: right;
-    width: 11vh;
-    height: 11vh; 
-    padding: 1%;
-    background-size: contain;
-    border-radius: 50%;
-    display:table-cell;
-}
-*/
 .figure-profile div{
     width: 11vh;
     height: 11vh;
