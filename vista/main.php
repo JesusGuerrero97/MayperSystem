@@ -29,8 +29,14 @@ session_start();
         
         <div class="profile-information">
             <figure class="figure-profile">
-                <figcaption><?php echo $_SESSION['user']["userNombre"]; ?></figcaption>
                 <img src="<?php echo $_SESSION['user']["userFoto"]; ?>" alt="">
+                <figcaption>
+                   <?php 
+                        echo $_SESSION['user']["userNombre"]." ".$_SESSION['user']['userApellido'];
+                        echo "<br/>";
+                        echo "Puesto: ".$_SESSION['user']['userTipo'];
+                    ?>
+                </figcaption>
             </figure>
         </div>
         

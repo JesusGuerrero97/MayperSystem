@@ -71,7 +71,8 @@ p{
     width: 60%;
     height: 40%;
     color: #FFF;
-    font-size: 35px;
+    text-align: left;
+    font-size: 18px;
     text-align: right;
     vertical-align: middle;
     display:table-cell;
