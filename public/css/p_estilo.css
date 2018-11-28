@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    bottom: 0;
+}
+#tabs-container{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    display: inline-flex;
+}
+
+.tab{
+    width: 20%;
+    height: 6vh;
+    border: 1px solid #CCC;
+    background: #EDEDED;
+    cursor: pointer;
+}
+.tab-active{
+    background-color: #FFF;
+    border-bottom-color: #FFF    ;
+    z-index: 10;
+}
+
+.tab p{
+    text-align: center;
+}
+
+#container{
+    width: 50%;
+    margin-top: -1px;
+    margin-left: 25%;
+    position: relative;
+}
+
+#container img{
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+
+#container div{
+    border: solid 1px #ccc;
+}
+form{
+    margin-top: 5%;
+}
+.input{
+    width: 60%;
+    height: 4vh;
+    border-radius: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: solid 1px #CCC;
+    margin-top: 1%;
+    padding-left: 3%;
+}
+select.input{
+    width: 63.5%;
+    height: 5vh;
+}
+
+.submit{
+    width: 40%;
+    height: 2em;
+    margin-left: 30%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding-left: 3%;
+    cursor: pointer;
+}
+
+.content{
+    position: absolute;
+    display: none;
+    z-index: 1;     
+}
+
+.content-active{
+    display: block;
+}
+
+.form-p{
+    float: right;
+    padding-right: 10%;
+    cursor: pointer;
+}
+
+.input_two{
+    width: 28%;
+    height: 2em;
+    border-radius: 50px;
+    margin-left: 20%;
+    border: solid 1px #CCC;
+    margin-top: 1%;
+    padding-left: 3%;
+}
+.inputPair{
+    border: solid 1px #CCC;
+    width: 28%;
+    height: 2em;
+    padding-left: 3%;
+    border-radius: 50px;
+}
+
+h2{
+   text-align: center; 
+}
+
+.error-mensaje{
+    color: red;
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 19px;
+}
+
+form{
+    margin-top: 0;
+}

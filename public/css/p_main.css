@@ -1,0 +1,210 @@
+/**
+*     ESTILO DE LA MAIN PAGE
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+p{
+    color: white;
+    font-size: 25px;
+    margin-top: 0%;
+}
+
+
+
+/**
+*    HEADER
+*/
+
+#cortain{
+    width: 100%;
+    height: 20vh;
+    background-color: #0A3C78;
+    z-index: 1;
+    box-sizing: content-box;
+    user-select: none;
+}
+
+.image-logo{
+    width: 20%;
+    height: auto;
+    float: left;
+    margin: 1% 0 0 1%;
+}
+
+
+.image-logo img{
+    width: 100%;
+    height: auto;
+}
+
+.profile-information{
+    width: 20%;
+    height: 10vh;
+    float: right;
+    margin-right: 2%;
+    margin-top: 2.5vh;
+}
+.figure-profile{
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;   
+    display:table;
+}
+
+.figure-profile img{
+    float: right;
+    width: 80%;
+    padding: 1%;
+    border-radius: 50%;
+    display:table-cell;
+}
+
+.figure-profile figcaption{    
+    width: 60%;
+    height: 40%;
+    color: #FFF;
+    font-size: 35px;
+    text-align: right;
+    vertical-align: middle;
+    display:table-cell;
+}
+
+
+/**
+*    PANEL LATERAL IZQUIERDO
+*/
+
+#side-left{
+    width: 8%;
+    height: 80vh;
+    background-color: #5B6569;
+    float: left;
+    margin-left: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.notification-pane{
+    width: 15vh;
+    height: 15vh;
+    display: table;
+    margin-top: 35%;
+    border-radius: 50%;
+    background-color: #333B3E;
+    
+}
+
+.notification_image{
+    width: 60%;
+    height: 10vh;
+    vertical-align: middle;
+    display: table-cell;
+    cursor: pointer;
+    margin-left: 20%;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.exit-button{
+    width: 95%;
+    height: 5vh;
+    background-color: #042956;
+    border: solid 2px #021934;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-top: 5%;
+    margin-left: 2%;
+    box-sizing: content-box;
+}
+.exit-button p{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.exit-button:active{
+    user-select: none;
+    background-color: #042956 !important;
+    border: solid 2px #021934 !important;
+}
+.exit-button:hover{
+    background-color: #021934;
+    border: solid 2px #042956; 
+    cursor: pointer;
+}
+
+/**
+*    CONTENEDOR DE CONTENIDO XD
+*/
+
+#container{
+    width: 82%;
+    height: 86vh;
+    background-color: transparent;
+    margin-left: 18%;
+    margin-top: -6vh;
+    box-sizing: content-box;
+    margin-bottom: 0;
+    user-select: none;
+}
+
+#row{
+    width: 99.8%;
+    height: 50%;
+    box-sizing: content-box;
+    top: 0;
+}
+
+
+.box{
+    width: 30vh;
+    height: 29vh;
+    background-color: #1054A5;
+    display: inline-block;
+    border-radius: 5%;
+    margin-left: 6%;
+    user-select: none;
+}
+.box:hover{
+    background-color: #0A468D;
+}
+.box:active{
+    background-color: #1054A5 !important;
+}
+
+.box1, .box4{
+    margin-left: 15%;
+}
+
+.box figure{
+    width: 100%;
+    height: 80%;
+    margin-left: 0;
+}
+.box figure img{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.box figure figcaption{
+    width: 100%;
+    background-color: indianred;
+    color: #FFF;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 8%;
+/*
+    height: 31%;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+*/
+}
