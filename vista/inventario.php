@@ -8,13 +8,12 @@
     <title>Inventario</title>
     <link rel="stylesheet" href="../public/css/estilo.css">
     <link rel="stylesheet" href="../public/css/modal.css">
-
     <style type="text/css">
         .image-profile{
             background-image: url('<?php echo $_SESSION['user']['userFoto']; ?>');
         }
     </style>
-
+    <link rel="stylesheet" href="../public/css/inventario.css">
   </head>
   <body>
     <div id="sechead">
@@ -68,7 +67,9 @@
     </div>
       <div class="container">
           <div class="content content-active">
-            Hola Como estas
+            <div class="inv">
+              <p>Inventario Principal</p>
+            </div>
           </div>
           <div class="content">
               Hola es el body 2

@@ -17,31 +17,6 @@ body{
     display: inline-block;
     background-attachment: fixed;
 }
-#body{
-    /*position: fixed;*/
-    margin-top: 1.8vh;
-    height: 77.2vh;
-    width: 92%;
-    background-color: transparent;
-    display: inline-block;
-    background-size: cover;
-    /*background-attachment: fixed;*/
-    float: left;
-    position: relative;
-
-}
-.body2{
-    /*position: fixed;*/
-    margin-top: 1.8vh;
-    height: 77.2vh;
-    width: 82%;
-    background-color: black;
-    display: none;
-    background-size: cover;
-    /*background-attachment: fixed;*/
-    float: left;
-    position: relative;
-}
 #noti
 {
   height: 80.1vh;
@@ -75,14 +50,7 @@ div.ot {
   height: 100px;
   color: white;
 }
-div.information
-{
-  width: 25%;
-  margin-top: 2%;
-  float: right;
-  color: white;
 
-}
 div.in
 {
   display: inline-block;
@@ -118,12 +86,6 @@ img.logo
   width: 70%;
   margin-top: 25%;
 }
-img.perfil
-{
-  width: 20%;
-  right: 0;
-  cursor: pointer;
-}
 p.datos
 {
   color: white;
@@ -137,10 +99,6 @@ p.vi
   text-align: center;
   padding: auto;
   color: white;
-}
-p.r{
-  margin-right:30%;
-  float: right;
 }
 .notification-pane{
     border-radius: 32px;
@@ -253,7 +211,6 @@ div.ce
     background-size: cover;
     float: left;
     position: absolute;
-    border: #f25f25 solid 1px;
     display: none;
 }
 .content-active{
