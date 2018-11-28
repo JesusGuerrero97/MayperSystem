@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,8 +15,8 @@
       <div class="in ce"><img class="logo" src="../Public/img/aprovaciones.png" alt=""><p class="vi">Aprobaciones</p></div>
       <div class="in"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Productos</p></div>
       <div class="information">
-        <img  class="perfil" src="../Public/img/user.png" alt="usuario">
-        <p class="r">Jesus Guadalupe Guerrero Partida <br>Puesto: Programador</p>
+        <img  class="perfil" src="<?php echo $_SESSION['user']['userFoto']; ?>" alt="usuario">
+        <p class="r"><?php echo $_SESSION['user']['userNombre']." ".$_SESSION['user']['userApellido']; ?> <br>Puesto: <?php echo $_SESSION['user']['userTipo']; ?></p>
       </div>
     </div>
     <div id="noti">
