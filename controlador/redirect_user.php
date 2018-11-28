@@ -11,20 +11,20 @@ if(isset($_GET['target'])){
             break;
 
         case "Inventario":
-            $location = '../vista/inventario.html';
+            $location = '../vista/inventario.php';
             break;
 
         case "Vendedor":
 //            $location = 'Location: ../paginas/vendedores.html';
-            $location = '../vista/vendedores.html';
+            $location = '../vista/vendedores.php';
             break;
 
         case "Administrativo":
-            $location = '../vista/administrativos.html';
+            $location = '../vista/administrativos.php';
             break;
 
         case "Aplicacionista":
-            $location = '../vista/aplicacionistas.html';
+            $location = '../vista/aplicacionistas.php';
             break;
             
         }
