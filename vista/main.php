@@ -44,7 +44,7 @@ session_start();
 
        </div>
        
-       <div class="exit-button" onclick="document.location = '../controlador/logout.php';" title="">
+       <div class="exit-button" onclick="document.location = '../controlador/logout.php';" title="Cerrar sesion">
             <p>Cerrar sesión</p>
         </div>
         
@@ -52,7 +52,7 @@ session_start();
     
     <section id="container">
         
-        <section id="row">
+        <section id="row" onclick="document.location = 'inventario.php'">
             <div class="box box1">
                 <figure>
                     <img src="../public/img/inventory_icon.png" alt="">
@@ -64,7 +64,7 @@ session_start();
                 
             </div>
 
-            <div class="box box2">
+            <div class="box box2" onclick="document.location = 'vendedores.php'">
                 <figure>
                     <img src="../public/img/saleman_icon.png" alt="">
                     <figcaption>
@@ -73,7 +73,7 @@ session_start();
                 </figure>
             </div>
 
-            <div class="box box3">
+            <div class="box box3" onclick="document.location = 'administrativo.php'">
                 <figure>
                     <img src="../public/img/administrator_icon.png" alt="">
                     <figcaption>
@@ -88,7 +88,7 @@ session_start();
         <section id="row" class="br">
         
             
-            <div class="box box4">
+            <div class="box box4" onclick="document.location = 'aplicacionistas.php'">
                 <figure>
                     <img src="../public/img/engineer_icon.png" alt="">
                     <figcaption>
@@ -97,7 +97,7 @@ session_start();
                 </figure>
             </div>
 
-            <div class="box box5">
+            <div class="box box5" onclick="document.location = 'contrato.php'">
                 <figure>
                     <img src="../public/img/contrato.png" alt="">
                     <figcaption>
@@ -106,7 +106,7 @@ session_start();
                 </figure>
             </div>
 
-            <div class="box box6">        
+            <div class="box box6" onclick="document.location = 'demo.php'">        
                 <figure>
                     <img src="../public/img/demo.png" alt="">
                     <figcaption>

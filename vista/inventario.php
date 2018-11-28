@@ -39,7 +39,7 @@
            </div>
          </div>
        </div>
-       <div class="exit">
+       <div class="exit" onclick="document.location = '../controlador/logout.php';">
           <figure>
                <img class="notification_image" src="../Public/img/exit.png" alt="Cerrar sesión" title="Cerrar Sesion">
           </figure>
