@@ -73,7 +73,46 @@
             <div class="db">
               <p class="tp">Configuración de Productos</p>
               <a href=""> <input type="button" class="add" name="" value="+ Productos"> </a>
-              <p> Mostrar <select> <option value="10">10</option> <option value="15">15</option> </select> </p>
+              <div class="find">
+                <b>Mostrar</b>
+                 <select>
+                   <option value="10">10</option>
+                   <option value="15">15</option>
+                 </select>
+                 <b>registros</b>
+                 <div class="right">
+                   <b>Buscar</b>
+                   <input type="text" name="Buscar" value="" placeholder="Productos">
+                 </div>
+
+              </div>
+              <table class="regis_produc">
+                <?php
+                 require_once('../modelo/inventario.php');
+                 $productos = get_productos();
+                ?>
+                <tr>
+                  <th>Producto</th>
+                  <th>Clave</th>
+                  <th>Categoria</th>
+                  <th>Estatus</th>
+                  <th colspan="2">Opciones</th>
+
+                  <?php
+                   foreach ($productos as $value)
+                   {
+                  ?>
+                    <tr>
+                      <td><?php echo $value['Modelo']; ?></td>
+                      <td><?php echo $value['Clave']; ?></td>
+                      <td><?php echo $value['Nombre_categorias'];?></td>
+                      <td><?php echo $value['Nombre_status']; ?></td>
+                      <td> <a href="#">Editar</a></td>
+                      <td> <a href="#">Eliminar</a></td>
+                    </tr>
+            <?php } ?>
+              </table>
+              
             </div>
           </div>
           <div class="content">

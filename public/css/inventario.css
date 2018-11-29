@@ -1,5 +1,4 @@
-div.inv
-{
+div.inv {
   background-color: #FFF;
   width: 98%;
   height: 10%;
@@ -8,44 +7,89 @@ div.inv
   padding-left: 2%;
   border-bottom: 3px solid #23B3D8;
 }
-p.t
-{
+
+p.t {
   font-size: 30px;
   font-style: bold;
-
 }
-span.t2
-{
+
+span.t2 {
   font-size: 18px;
   color: #ccc;
   font-style: normal;
 }
-p.tp
-{
+
+p.tp {
   padding-top: 1%;
   font-size: 18px;
   color: #ccc;
   font-style: normal;
 }
-div.db
-{
+
+div.db {
   background-color: white;
   width: 98%;
   height: 88%;
   margin-top: -18px;
-  margin-left:1%;
+  margin-left: 1%;
   padding-left: 1%;
 }
-a{
+
+a {
   text-decoration: none;
-  }
-input.add{
+}
+
+div.find {
+  margin-top: 1%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+select {
+  width: 5%;
+  height: 25px;
+}
+
+input.add {
   border: none;
   padding: 3px;
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #00C1EE;
-  width: 10%;
+  width: 8%;
   height: 8%;
   margin-left: 0;
+}
+
+div.right {
+  float: right;
+}
+
+input[type=text] {
+  height: 30px;
+}
+table.regis_produc
+{
+  font-family: "Trebuch et MS", Arial,Helvatica;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 2%;
+}
+.regis_produc th, .regis_produc td
+{
+  border: 2px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background: white;
+}
+.regis_produc th
+{
+   border-bottom: 5px solid #ddd;
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: center;
+   background-color: #52D3BA;
+   color:white;
 }
