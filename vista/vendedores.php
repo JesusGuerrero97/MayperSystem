@@ -92,10 +92,22 @@
                         <div class="input_name">
                            <p>
                             <?php
-                                
-                               
+                                require_once('../controlador/solicitudes.php');
+                                echo get_next_key();
                             ?>
                             </p>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="input_icon"><img src="../public/img/clients.png"></div>
+                        <div class="input_set">
+                           <select name="clientes">
+                               <option value="0">Seleccione un cliente ...</option>
+                               <option value="">dsa</option>
+                           </select>
+                        </div>
+                        <div class="input_new">
+                            <button>Agregar</button>
                         </div>
                     </div>
                 </section>
