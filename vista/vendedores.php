@@ -140,15 +140,63 @@
                         <p>Almacen*</p>
                         <p>Categoria*</p>
                         <select name="almacen" class="select">
-                            <option value="1">Mazatlán</option>
-                            <option value="1">Veracrúz</option>
+                            <option value="1">Sucursales ...</option>
+                            <?php
+                            
+                                require_once('../modelo/sucursales.php');
+                                $res = get_sucursales();
+                            
+                                if($res){
+                                    while($row = mysqli_fetch_array($res)){
+                                        
+                                        echo "<option value='1'>".utf8_encode($row['Nombre_sucursal'])."</option>";
+                                        
+                                    }
+                                }
+                            
+                            ?>
                         </select>
 
                         <select name="categoria" class="select">
-                            <option value="1">Ultrasonidos</option>
-                            <option value="1">Accesorios</option>
+                            <option value="1">Categorias ...</option>
+                               <?php
+
+                                    require_once('../modelo/categorias.php');
+                                    $res = get_categorias();
+
+                                    if($res){
+                                        while($row = mysqli_fetch_array($res)){
+
+                                            echo "<option value='1'>".utf8_encode($row['Nombre_categorias'])."</option>";
+
+                                        }
+                                    }
+
+                                ?>
                         </select>
                     </div>
+                    
+                    <div class="content_p_filters">
+                        <div class="content_p_filters_left">
+                            <p>
+                                <b>Mostrar</b>
+                                <select name="" id="">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <b>registros</b>
+                            </p>
+                        </div>
+                        <div class="content_p_filters_right">
+                            <p>
+                                <b>Buscar: </b>
+                                <input type="text" name="input_search">
+                            </p>
+                            
+                        </div>
+                    </div>
+                    
                   <div class="pager">
                        <ul>
                            <li class="change_page ">«</li>
