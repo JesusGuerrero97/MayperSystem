@@ -197,6 +197,34 @@
                         </div>
                     </div>
                     
+                    <div class="table_products">
+                       
+                       <table>
+                           <tr>
+                               <th>Sucursal</th>
+                               <th>Producto</th>
+                               <th>Clave</th>
+                               <th>Serie</th>
+                               <th>Acciones</th>
+                           </tr>
+                        <?php
+                            require_once('../modelo/inventario.php');
+                            $res = get_productos_Alm();
+                        
+                            if($res){
+                                while($row = mysqli_fetch_array($res)){
+                                    echo "<tr>";
+                                        echo "<td>".utf8_decode($row[''])."</td>";
+                                        echo "<td>".utf8_decode($row[''])."</td>";
+                                        echo "<td>".utf8_decode($row[''])."</td>";
+                                        echo "<td>".utf8_decode($row[''])."</td>";
+                                    echo "</tr>";
+                                }
+                            }
+                        ?>
+                        </table>
+                    </div>
+                    
                   <div class="pager">
                        <ul>
                            <li class="change_page ">«</li>
