@@ -1,3 +1,6 @@
+*{
+    outline: none;
+}
 .main_content{
     width: 99%;
     height: 76.8vh;
@@ -37,7 +40,7 @@
 }
 .content_p{
     width: 56%;
-    height: 50vh;
+    height: 65vh;
     max-height: 70vh;
     margin-right: 1%;
     float: right;
@@ -84,24 +87,24 @@
 .input{
     width: 90%;
     height: 9%;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin-left: 1%;
+    margin-top: 2%;
     border: solid 0.5px #CCC;
 }
 .input_icon{
-    width: 20%;
+    width: 10%;
     height: 100%;
     border-right: solid 0.5px #CCC;
     display: inline-block;
 }
 .input_icon img{
-    width: 40%;
+    width: 70%;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 15%;
 }
 
 .input_name{
-    width: 80%;
+    width: 90%;
     height: 100%;
     float: right;
     display: inline-block;
@@ -114,4 +117,119 @@
     font-size: 20px;
     padding: 2%;
     padding-left: 10%;
+}
+
+
+.input_set{
+    width: 70%;
+    height: 75%;
+    margin-left: 0px;
+    margin-top: 1%;
+    display: inline-block;
+    overflow: hidden;
+    background-color: aqua;
+}
+.input_set select{
+    width: 100%;  
+    height: 100%;
+    border: solid #FFF 1px;
+}
+.input_set select:focus{ outline: none;
+}
+
+.input_new{
+    width: 19%;
+    height: 100%;
+    display: inline-block;
+    background-color: #AAA;
+    float: right;
+}
+.input_new button{
+    width: 90%;
+    height: 70%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.second_pane{
+    width: 100%;
+    height: 25vh;
+    margin-top: 5%;
+    border-top: solid #CCC 0.5px;
+    border-bottom: solid #CCC 0.5px;
+}
+
+.second_pane p{
+    margin-left: 25%;
+}
+.second_pane textarea{
+    width: 70%;
+    height: 60%;
+    margin-right: 5%;
+    float: right;
+    resize: none;
+    
+}
+.second_pane textarea:focus{
+    outline: none;
+}
+
+.pane_submit{
+    width: 100%;
+    height: 15%;
+    border-bottom: solid #CCC 0.5px;
+}
+.pane_submit button{
+    width: 20%;
+    margin-left: 75%;
+    margin-top: 2%;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #3B8EBA;
+}
+
+.content_p_top{
+    width: 100%;
+    height: auto;
+    border-bottom: solid #CCC 0.5px;
+    padding-bottom: 2vh;
+}
+
+.content_p_top p{
+    width: 45%;
+    display: inline-block;
+    padding-left: 5%;
+    margin-bottom: 0.5%;
+}
+
+.select{
+    width: 40%;
+    height: 4vh;
+    margin-left: 5%;
+}
+
+.content_p_filters{
+    width: 100%;
+    height: 3vh;
+    border-bottom: solid #CCC 0.5px;
+    display: table;
+}
+
+.content_p_filters_left{
+    width: 50%;
+    height: 5vh;
+    display: table-cell;
+    padding-left: 5%;
+}
+
+.content_p_filters_right{
+    width: 50%;
+    height: 5vh;
+    display: table-cell;
+    text-align: right;
+    padding-right: 5%;
+}
+
+#noti{
+    height: 120vh !important;
 }

@@ -92,15 +92,111 @@
                         <div class="input_name">
                            <p>
                             <?php
-                                
-                               
+                                require_once('../controlador/solicitudes.php');
+                                echo get_next_key();
                             ?>
                             </p>
                         </div>
                     </div>
+                    <div class="input">
+                        <div class="input_icon"><img src="../public/img/clients.png"></div>
+                        <div class="input_set">
+                           <select name="clientes">
+                               <option value="0">Seleccione un cliente ...</option>
+                               
+                               <?php
+                                    require_once('../modelo/clientes.php');
+                                    $res = get_clients();
+                               
+                                    if($res){
+                                        while($row = mysqli_fetch_array($res)){
+                                            
+                                            echo "<option value='1'>".utf8_encode($row['Nombre_cliente'])." ".utf8_encode($row['Apellidos_cliente'])."
+                                            </option>";
+                                        }
+                                    }
+                               ?>
+                               
+                           </select>
+                        </div>
+                        <div class="input_new">
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="second_pane">
+                        <p>Observación:</p>
+                        <textarea name="comment" ></textarea>
+                    </div>
+                    
+                    <div class="pane_submit">
+                        <button>Enviar solicitud</button>
+                    </div>
                 </section>
                 
                 <section class="content_p">
+                 
+                    <div class="content_p_top">
+                        <p>Almacen*</p>
+                        <p>Categoria*</p>
+                        <select name="almacen" class="select">
+                            <option value="1">Sucursales ...</option>
+                            <?php
+                            
+                                require_once('../modelo/sucursales.php');
+                                $res = get_sucursales();
+                            
+                                if($res){
+                                    while($row = mysqli_fetch_array($res)){
+                                        
+                                        echo "<option value='1'>".utf8_encode($row['Nombre_sucursal'])."</option>";
+                                        
+                                    }
+                                }
+                            
+                            ?>
+                        </select>
+
+                        <select name="categoria" class="select">
+                            <option value="1">Categorias ...</option>
+                               <?php
+
+                                    require_once('../modelo/categorias.php');
+                                    $res = get_categorias();
+
+                                    if($res){
+                                        while($row = mysqli_fetch_array($res)){
+
+                                            echo "<option value='1'>".utf8_encode($row['Nombre_categorias'])."</option>";
+
+                                        }
+                                    }
+
+                                ?>
+                        </select>
+                    </div>
+                    
+                    <div class="content_p_filters">
+                        <div class="content_p_filters_left">
+                            <p>
+                                <b>Mostrar</b>
+                                <select name="" id="">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <b>registros</b>
+                            </p>
+                        </div>
+                        <div class="content_p_filters_right">
+                            <p>
+                                <b>Buscar: </b>
+                                <input type="text" name="input_search">
+                            </p>
+                            
+                        </div>
+                    </div>
+                    
                   <div class="pager">
                        <ul>
                            <li class="change_page ">«</li>
