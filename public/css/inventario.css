@@ -15,14 +15,14 @@ p.t {
 
 span.t2 {
   font-size: 18px;
-  color: #ccc;
+  color: #ABA9A9;
   font-style: normal;
 }
 
 p.tp {
   padding-top: 1%;
   font-size: 18px;
-  color: #ccc;
+  color: #ABA9A9;
   font-style: normal;
 }
 
@@ -51,7 +51,16 @@ select {
   width: 5%;
   height: 25px;
 }
-
+select.find
+{
+  width: 100px;
+}
+img.find
+{
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
 input.add {
   border: none;
   padding: 3px;
@@ -92,4 +101,36 @@ table.regis_produc
    text-align: center;
    background-color: #52D3BA;
    color:white;
+}
+.pager{
+    width: 97%;
+    height: 5vh;
+    position: absolute;
+    bottom: 4%;
+}
+.pager ul{
+    width: 100%;
+    height: 5vh;
+    margin-top: 0.2%;
+    text-align: center;
+}
+.pager ul li{
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    color: #000 ;
+    border: 1px #CCC solid;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 4px;
+}
+.pager ul li a{
+    vertical-align: bottom;
+}
+.pager li
+{
+  margin: -3px;
+}
+.page-active{
+    background-color: #CCC;
 }

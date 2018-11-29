@@ -81,8 +81,9 @@
                  </select>
                  <b>registros</b>
                  <div class="right">
-                   <b>Buscar</b>
+                   <b>Buscar: </b>
                    <input type="text" name="Buscar" value="" placeholder="Productos">
+                   <img class="find" src="../public/img/find.png" alt="">
                  </div>
 
               </div>
@@ -112,14 +113,152 @@
                     </tr>
             <?php } ?>
               </table>
-              
+              <div class="pager">
+                   <ul>
+                       <li class="change_page">Ant</li>
+                       <li class="page-active"><a href="">1</a></li>
+                       <li><a href="">2</a></li>
+                       <li><a href="">3</a></li>
+                       <li class="change_page">Sig</li>
+                   </ul>
+              </div>
             </div>
           </div>
           <div class="content">
-              Hola es el body 2
+            <!--
+            APARTIR DE AQUI PERTENECE AL OTRO CONTENIDO
+            -->
+            <div class="inv">
+              <p class="t">Solicitudes Ventas <span class="t2">Mayper Medical</span></p>
+            </div>
+            <div class="db">
+              <p class="tp">Aprobacion de solicitudes</p>
+              <div class="find">
+                <b>Mostrar</b>
+                 <select>
+                   <option value="10">10</option>
+                   <option value="15">15</option>
+                 </select>
+                 <b>registros</b>
+                 <div class="right">
+                   <select class="find">
+                     <option value="">Fecha</option>
+                     <option value="">Cliente</option>
+                     <option value="">Vendedor</option>
+                   </select>
+                   <input type="text" name="Buscar" value="" placeholder="Solicitud">
+                   <img class="find" src="../public/img/find.png" alt="">
+                 </div>
+
+              </div>
+              <table class="regis_produc">
+                <?php
+                 $productos = get_solicitudesVentas();
+                ?>
+                <tr>
+                  <th>Fecha de Solicitud</th>
+                  <th>Nombre Cliente</th>
+                  <th>Nombre Empleado</th>
+                  <th>Status</th>
+                  <th>Tipo</th>
+                  <th>Observacion</th>
+                  <th colspan="3">Opciones</th>
+
+                  <?php
+                   foreach ($productos as $value)
+                   {
+                  ?>
+                    <tr>
+                      <td><?php echo $value['Fecha_registro']; ?></td>
+                      <td><?php echo utf8_encode($value['Nombre_cliente']." ".$value['Apellidos_cliente']); ?></td>
+                      <td><?php echo utf8_encode($value['Nombre_empleado']." ".$value['Apellidos_empleado']);?></td>
+                      <td><?php echo $value['Status']; ?></td>
+                      <td><?php echo $value['Tipo']; ?></td>
+                      <td><?php echo utf8_encode($value['Observacion']); ?></td>
+                      <td> <a href="#">Aprobar</a></td>
+                      <td> <a href="#">Rechazar</a></td>
+                      <td> <a href="#">Ver Más...</a> </td>
+                    </tr>
+            <?php } ?>
+              </table>
+              <div class="pager">
+                   <ul>
+                       <li class="change_page">Ant</li>
+                       <li class="page-active"><a href="">1</a></li>
+                       <li><a href="">2</a></li>
+                       <li><a href="">3</a></li>
+                       <li class="change_page">Sig</li>
+                   </ul>
+              </div>
+            </div>
           </div>
           <div class="content">
-              Hola es el body 3
+            <!--
+            APARTIR DE AQUI PERTENECE AL OTRO CONTENIDO
+            -->
+            <div class="inv">
+              <p class="t">Solicitudes Demos <span class="t2">Mayper Medical</span></p>
+            </div>
+            <div class="db">
+              <p class="tp">Aprobacion de demostraciones</p>
+              <div class="find">
+                <b>Mostrar</b>
+                 <select>
+                   <option value="10">10</option>
+                   <option value="15">15</option>
+                 </select>
+                 <b>registros</b>
+                 <div class="right">
+                   <select class="find">
+                     <option value="">Fecha</option>
+                     <option value="">Cliente</option>
+                     <option value="">Vendedor</option>
+                   </select>
+                   <input type="text" name="Buscar" value="" placeholder="Solicitud">
+                   <img class="find" src="../public/img/find.png" alt="">
+                 </div>
+
+              </div>
+              <table class="regis_produc">
+                <?php
+                 $productos = get_solicitudesDemos();
+                ?>
+                <tr>
+                  <th>Fecha de Solicitud</th>
+                  <th>Nombre Cliente</th>
+                  <th>Nombre Empleado</th>
+                  <th>Status</th>
+                  <th>Tipo</th>
+                  <th>Observacion</th>
+                  <th colspan="3">Opciones</th>
+
+                  <?php
+                   foreach ($productos as $value)
+                   {
+                  ?>
+                    <tr>
+                      <td><?php echo $value['Fecha_registro']; ?></td>
+                      <td><?php echo utf8_encode($value['Nombre_cliente']." ".$value['Apellidos_cliente']); ?></td>
+                      <td><?php echo utf8_encode($value['Nombre_empleado']." ".$value['Apellidos_empleado']);?></td>
+                      <td><?php echo $value['Status']; ?></td>
+                      <td><?php echo $value['Tipo']; ?></td>
+                      <td><?php echo utf8_encode($value['Observacion']); ?></td>
+                      <td> <a href="#">Aprobar</a></td>
+                      <td> <a href="#">Rechazar</a></td>
+                      <td> <a href="#">Ver Más...</a> </td>
+                    </tr>
+            <?php } ?>
+              </table>
+              <div class="pager">
+                   <ul>
+                       <li class="change_page">Ant</li>
+                       <li class="page-active"><a href="">1</a></li>
+                       <li><a href="">2</a></li>
+                       <li><a href="">3</a></li>
+                       <li class="change_page">Sig</li>
+                   </ul>
+              </div>
+            </div>
           </div>
           <div class="content">
               Hola es el body 4
