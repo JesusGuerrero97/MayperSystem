@@ -1,3 +1,6 @@
+*{
+    outline: none;
+}
 .main_content{
     width: 99%;
     height: 76.8vh;
@@ -146,4 +149,61 @@
     height: 70%;
     margin-left: 5%;
     margin-top: 5%;
+}
+.second_pane{
+    width: 100%;
+    height: 25vh;
+    margin-top: 5%;
+    border-top: solid #CCC 0.5px;
+    border-bottom: solid #CCC 0.5px;
+}
+
+.second_pane p{
+    margin-left: 25%;
+}
+.second_pane textarea{
+    width: 70%;
+    height: 60%;
+    margin-right: 5%;
+    float: right;
+    resize: none;
+    
+}
+.second_pane textarea:focus{
+    outline: none;
+}
+
+.pane_submit{
+    width: 100%;
+    height: 15%;
+    border-bottom: solid #CCC 0.5px;
+}
+.pane_submit button{
+    width: 20%;
+    margin-left: 75%;
+    margin-top: 2%;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #3B8EBA;
+};
+
+.content_p_top{
+    width: 100%;
+    height: 5vh;
+    background-color: violet;
+    border-bottom: solid #000 0.5px;
+}
+
+.content_p_top p{
+    width: 45%;
+    display: inline-block;
+    padding-left: 5%;
+    margin-bottom: 0.5%;
+}
+
+.select{
+    width: 40%;
+    height: 4vh;
+    margin-left: 5%;
 }

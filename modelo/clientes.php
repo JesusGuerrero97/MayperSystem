@@ -49,4 +49,16 @@ function get_client_session($user, $password){
     return $res;
 }
 
+function get_clients(){
+    
+    require_once('conexion.php');
+    $con = conectar();
+    
+    $query = "SELECT Id_cliente, Nombre_cliente, Apellidos_cliente FROM clientes";
+    
+    $res = mysqli_query($con, $query);
+    mysqli_close($con);
+    return $res;
+}
+
 ?>
