@@ -1,0 +1,70 @@
+.main_content{
+    width: 98%;
+    height: 76.8vh;
+    margin-left: 1%;
+    background-color: #FFF;
+    box-sizing: content-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.content_top{
+    width: 100%;
+    height: 8vh;
+    margin-top: 0.5vh;
+    background-color: transparent;
+    box-sizing: content-box;
+    border-bottom: solid #CCC 0.5px;
+    border-top: solid #40AAC4 5px; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+
+.content_sv{
+    width: 40%;
+    height: 63vh;
+    max-height: 70vh;
+    margin-left: 1%;
+    float: left;
+    margin-top: 2vh;
+    display: inline-block;
+    box-sizing: content-box;
+    background-color: transparent;
+    border: solid 0.5px #CCC;
+    border-top: solid #479A74 5px; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.content_p{
+    width: 56%;
+    height: 50vh;
+    max-height: 70vh;
+    margin-right: 1%;
+    float: right;
+    margin-top: 2vh;
+    display: inline-block;
+    box-sizing: content-box;
+    background-color: transparent;
+    border: solid 0.5px #CCC;
+    border-top: solid #D3A761 5px; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+}
+
+.pager{
+    bottom: 0;
+    position: absolute;
+}
+.pager li{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0;
+    border: 1px #CCC solid;
+    text-align: center;
+    vertical-align: sub;
+}
+.change_page{
+ width: 40px;  
+}

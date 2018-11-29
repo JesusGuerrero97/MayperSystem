@@ -8,6 +8,7 @@
     <title>Vendedores</title>
     <link rel="stylesheet" href="../public  /css/estilo.css">
     <link rel="stylesheet" href="../public/css/modal.css">
+    <link rel="stylesheet" href="../public/css/p_vendedores.css">
 
     <style type="text/css">
         .image-profile{
@@ -47,39 +48,47 @@
         </div>
     </div>
     <div id="noti">
-      <div class="cont">
-        <div class="notification-pane" id="mynotification">
-           <figure>
-                <img class="notification_image" src="../Public/img/notification_icon.png" alt="notificacion" title="Notificación">
-           </figure>
-       </div>
-       <div id="myModal" class="modal">
-         <!-- Modal content -->
-         <div class="modal-content">
-           <div class="modal-header">
-             <span class="close">&times;</span>
-             <h2>Notificaciones</h2>
-           </div>
-           <div class="modal-body">
-             <p>Some text in the Modal Body</p>
-             <p>Some other text...</p>
-           </div>
-         </div>
-       </div>
-       <div class="exit" onclick="document.location = '../controlador/logout.php';">
-          <figure>
-               <img class="notification_image" src="../Public/img/exit.png" alt="">
-          </figure>
-      </div>
-        <!--<div class="ot">
-          Notificaciones
-        </div>-->
-      </div>
+        <div class="cont">
+            <div class="notification-pane" id="mynotification">
+                <figure>
+                    <img class="notification_image" src="../Public/img/notification_icon.png" alt="notificacion" title="Notificación">
+               </figure>
+            </div>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                         <span class="close">&times;</span>
+                         <h2>Notificaciones</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="exit" onclick="document.location = '../controlador/logout.php';">
+                <figure>
+                    <img class="notification_image" src="../Public/img/exit.png" alt="">
+                </figure>
+            </div>
+          </div>
     </div>
 
     <div class="container">
         <div class="content content-active">
-          Hola Como estas
+            <div class="main_content">
+                <section class="content_top">
+                </section>
+                <section class="content_sv"></section>
+            <section class="content_p">
+               <ul class="pager">
+                   <li class="change_page">Ant.</li>
+                   <li>1</li>
+                   <li class="change_page">Sig.</li>
+               </ul>
+            </section>
+            </div>
         </div>
         <div class="content">
             Hola es el body 2

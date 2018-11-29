@@ -7,7 +7,6 @@ session_start();
     <meta charset="UTF-8">
     <title>Main page</title>
     <link rel="stylesheet" href="../public/css/p_main.css">
-    <link rel="stylesheet" href="../public/css/p_modal.css">
     <style type="text/css">
         .image-profile{
             background-image: url('<?php echo $_SESSION['user']['userFoto']; ?>');
@@ -21,9 +20,14 @@ session_start();
 
         if(!isset($_SESSION['user'])){
             echo'<script type="text/javascript">
-            alert("Inicie sesión para continar");
-            window.location.href="login.php";
-            </script>';
+                    alert("Inicie sesión para continar");
+                    window.location.href="login.php";
+                </script>';
+            
+        }else if(isset($_SESSION['user']) && $_SESSION['user']['userTipo'] != "Administrador"){
+           
+            $loc = "?target=".$_SESSION['user']['userTipo'];
+            header("Location: ../controlador/redirect_user.php".$loc);
         }
     ?>
     
