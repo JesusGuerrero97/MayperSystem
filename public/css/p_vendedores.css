@@ -1,7 +1,7 @@
 .main_content{
-    width: 98%;
+    width: 99%;
     height: 76.8vh;
-    margin-left: 1%;
+    margin-left: 0.5%;
     background-color: #FFF;
     box-sizing: content-box;
     border-top-left-radius: 5px;
@@ -53,18 +53,65 @@
 }
 
 .pager{
-    bottom: 0;
+    width: 100%;
+    height: 5vh;
     position: absolute;
+    bottom: 0%;
 }
-.pager li{
+.pager ul{
+    width: 100%;
+    height: 5vh;    
+    margin-top: 0.2%;
+    text-align: center;
+}
+.pager ul li{
     width: 25px;
     height: 25px;
     display: inline-block;
     margin: 0;
+    color: #000;
     border: 1px #CCC solid;
     text-align: center;
-    vertical-align: sub;
 }
-.change_page{
- width: 40px;  
+.pager ul li a{
+    vertical-align: bottom;
+}
+.page-active{
+    background-color: #CCC;
+}
+
+/* form solicitar venta */
+.input{
+    width: 90%;
+    height: 9%;
+    margin-left: 5%;
+    margin-top: 5%;
+    border: solid 0.5px #CCC;
+}
+.input_icon{
+    width: 20%;
+    height: 100%;
+    border-right: solid 0.5px #CCC;
+    display: inline-block;
+}
+.input_icon img{
+    width: 40%;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.input_name{
+    width: 80%;
+    height: 100%;
+    float: right;
+    display: inline-block;
+}
+.input_name p{
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    text-align: left;
+    font-size: 20px;
+    padding: 2%;
+    padding-left: 10%;
 }

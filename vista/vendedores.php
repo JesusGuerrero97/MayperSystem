@@ -79,15 +79,31 @@
         <div class="content content-active">
             <div class="main_content">
                 <section class="content_top">
+                    <h3>Solicitar venta</h3>
                 </section>
-                <section class="content_sv"></section>
-            <section class="content_p">
-               <ul class="pager">
-                   <li class="change_page">Ant.</li>
-                   <li>1</li>
-                   <li class="change_page">Sig.</li>
-               </ul>
-            </section>
+                
+                <section class="content_sv">
+                    <div class="input">
+                        <div class="input_icon"><img src="../public/img/user_icon.png"></div>
+                        <div class="input_name"><p><?php echo $_SESSION['user']['userNombre']." ".$_SESSION['user']['userApellido'];?></p></div>
+                    </div>
+                    <div class="input">
+                        <div class="input_icon"><img src="../public/img/key.png"></div>
+                        <div class="input_name"><p>fgdf<?php ?></p></div>
+                    </div>
+                </section>
+                
+                <section class="content_p">
+                  <div class="pager">
+                       <ul>
+                           <li class="change_page ">«</li>
+                           <li class="page-active"><a href="">1</a></li>
+                           <li><a href="">2</a></li>
+                           <li><a href="">3</a></li>
+                           <li class="change_page">»</li>
+                       </ul>   
+                  </div>
+                </section>
             </div>
         </div>
         <div class="content">
@@ -97,4 +113,5 @@
   </body>
   <script src="../public/js/modal.js"></script>
   <script src="../public/js/p_tabs_menus.js"></script>
+
 </html>
