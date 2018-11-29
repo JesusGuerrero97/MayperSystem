@@ -89,7 +89,14 @@
                     </div>
                     <div class="input">
                         <div class="input_icon"><img src="../public/img/key.png"></div>
-                        <div class="input_name"><p>fgdf<?php ?></p></div>
+                        <div class="input_name">
+                           <p>
+                            <?php
+                                
+                               
+                            ?>
+                            </p>
+                        </div>
                     </div>
                 </section>
                 
