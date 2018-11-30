@@ -37,7 +37,7 @@ session_start();
                         $_SESSION['mensaje'] = "";
                         
                         //REDIRIGIR AL USUARIO A SU VISTA
-                        
+                       
                         $loc = "?target=".$_SESSION['user']['userTipo'];
                         header("Location: redirect_user.php".$loc);
                         

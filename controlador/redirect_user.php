@@ -14,7 +14,7 @@ if(isset($_GET['target'])){
             $location = '../vista/inventario.php';
             break;
 
-        case "Vendedor":
+        case "Asesor médico":
 //            $location = 'Location: ../paginas/vendedores.html';
             $location = '../vista/vendedores.php';
             break;

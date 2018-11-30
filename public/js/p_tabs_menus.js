@@ -19,7 +19,9 @@
            
            let i = tabs.indexOf(e);
     
-           
+          tabs.map(tab => tab.classList.remove('tab-active'));
+          tabs[i].classList.add("tab-active");
+          
            contents.map(panel => panel.classList.remove('content-active'));
 //          
            contents[i].classList.add('content-active');
