@@ -233,3 +233,42 @@
 #noti{
     height: 120vh !important;
 }
+
+
+/* tabla productos */
+
+.table_products{
+    width: 100%;
+    height: 60%;
+    
+}
+
+#table{
+    width: 99%;
+    height: auto;
+    margin: 0.5%;
+    font-family: "Trebuch et MS", Arial,Helvatica;
+    border-collapse: collapse;
+}
+#table th{
+    color: #FFF;
+    background-color: #52D3BA;
+     border: solid #CCC 0.2px;
+    border-bottom: solid #CCC 2px;
+    padding: 8px;
+    margin: 0;
+}
+#table tr{
+    width: 20%;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+}
+#table td{
+    border: solid #CCC 0.5px;
+    margin: 0;
+}
+.btn_table{
+    border: none;
+    border: solid 1px #AAA;
+}

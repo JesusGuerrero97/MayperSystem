@@ -199,7 +199,7 @@
                     
                     <div class="table_products">
                        
-                       <table>
+                       <table id="table">
                            <tr>
                                <th>Sucursal</th>
                                <th>Producto</th>
@@ -209,15 +209,16 @@
                            </tr>
                         <?php
                             require_once('../modelo/inventario.php');
-                            $res = get_productos_Alm();
+                            $res = get_productosAlm();
                         
                             if($res){
                                 while($row = mysqli_fetch_array($res)){
                                     echo "<tr>";
-                                        echo "<td>".utf8_decode($row[''])."</td>";
-                                        echo "<td>".utf8_decode($row[''])."</td>";
-                                        echo "<td>".utf8_decode($row[''])."</td>";
-                                        echo "<td>".utf8_decode($row[''])."</td>";
+                                        echo "<td>".utf8_encode($row['Nombre_sucursal'])."</td>";
+                                        echo "<td>".utf8_encode($row['Modelo'])."</td>";
+                                        echo "<td>".utf8_encode($row['Clave'])."</td>";
+                                        echo "<td>".utf8_encode($row['Serie'])."</td>";
+                                        echo "<td><button class='btn_table'>Agregar</button></td>";
                                     echo "</tr>";
                                 }
                             }
