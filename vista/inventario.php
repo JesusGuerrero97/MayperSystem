@@ -18,7 +18,7 @@
   <body>
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
-      <div class="tab in inprincipal"id="equipos"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Equipos</p></div>
+      <div class="tab tab-active in inprincipal"id="equipos"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Equipos</p></div>
       <div class="tab in" id="ventas"><img class="logo" src="../Public/img/ventas.png" alt=""><p class="vi">Ventas</p></div>
       <div class="tab in" id="demos"><img class="logo" src="../Public/img/Demo.png" alt=""><p class="vi">Demos</p></div>
       <div class="tab in"><img class="logo" src="../Public/img/Reportes.png" alt=""><p class="vi">Reportes</p></div>

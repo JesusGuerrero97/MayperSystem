@@ -19,7 +19,7 @@ session_start();
   <body>
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
-      <div class="in ce"><img class="logo" src="../Public/img/Confirmacion.png" alt=""><p class="vi">Confirmaciones</p></div>
+      <div class="in ce tab-active"><img class="logo" src="../Public/img/Confirmacion.png" alt=""><p class="vi">Confirmaciones</p></div>
       <div class="in"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Productos</p></div>
      
         <div class="profile-information">
