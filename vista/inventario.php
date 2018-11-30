@@ -18,9 +18,9 @@
   <body>
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
-      <div class="tab in inprincipal"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Equipos</p></div>
-      <div class="tab in"><img class="logo" src="../Public/img/ventas.png" alt=""><p class="vi">Ventas</p></div>
-      <div class="tab in"><img class="logo" src="../Public/img/Demo.png" alt=""><p class="vi">Demos</p></div>
+      <div class="tab in inprincipal"id="equipos"><img class="logo" src="../Public/img/equipos.png" alt=""><p class="vi">Equipos</p></div>
+      <div class="tab in" id="ventas"><img class="logo" src="../Public/img/ventas.png" alt=""><p class="vi">Ventas</p></div>
+      <div class="tab in" id="demos"><img class="logo" src="../Public/img/Demo.png" alt=""><p class="vi">Demos</p></div>
       <div class="tab in"><img class="logo" src="../Public/img/Reportes.png" alt=""><p class="vi">Reportes</p></div>
       <div class="tab in"><img class="logo" src="../Public/img/config.png" alt=""><p class="vi">Configuración</p></div>
       <div class="tab in"><img class="logo" src="../Public/img/respaldo.png" alt=""><p class="vi">Respaldo</p></div>
@@ -82,37 +82,14 @@
                  <b>registros</b>
                  <div class="right">
                    <b>Buscar: </b>
-                   <input type="text" name="Buscar" value="" placeholder="Productos">
+                   <input type="text" name="busqueda" id="busqueda"  placeholder="(ej. Producto,Categoria,Estatus)">
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
 
               </div>
-              <table class="regis_produc">
-                <?php
-                 require_once('../modelo/inventario.php');
-                 $productos = get_productos();
-                ?>
-                <tr>
-                  <th>Producto</th>
-                  <th>Clave</th>
-                  <th>Categoria</th>
-                  <th>Estatus</th>
-                  <th colspan="2">Opciones</th>
+              <section id="tabla">
 
-                  <?php
-                   foreach ($productos as $value)
-                   {
-                  ?>
-                    <tr>
-                      <td><?php echo $value['Modelo']; ?></td>
-                      <td><?php echo $value['Clave']; ?></td>
-                      <td><?php echo $value['Nombre_categorias'];?></td>
-                      <td><?php echo $value['Nombre_status']; ?></td>
-                      <td> <a href="#">Editar</a></td>
-                      <td> <a href="#">Eliminar</a></td>
-                    </tr>
-            <?php } ?>
-              </table>
+              </section>
               <div class="pager">
                    <ul>
                        <li class="change_page">Ant</li>
@@ -141,46 +118,15 @@
                  </select>
                  <b>registros</b>
                  <div class="right">
-                   <select class="find">
-                     <option value="">Fecha</option>
-                     <option value="">Cliente</option>
-                     <option value="">Vendedor</option>
-                   </select>
-                   <input type="text" name="Buscar" value="" placeholder="Solicitud">
+                   <b>Buscar: </b>
+                   <input type="text" name="Buscar" id="buscarVenta" placeholder="(ej.Fecha,Clientes,Empleados,Estatus)">
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
 
               </div>
-              <table class="regis_produc">
-                <?php
-                 $productos = get_solicitudesVentas();
-                ?>
-                <tr>
-                  <th>Fecha de Solicitud</th>
-                  <th>Nombre Cliente</th>
-                  <th>Nombre Empleado</th>
-                  <th>Status</th>
-                  <th>Tipo</th>
-                  <th>Observacion</th>
-                  <th colspan="3">Opciones</th>
+              <section id="tablaVentas">
 
-                  <?php
-                   foreach ($productos as $value)
-                   {
-                  ?>
-                    <tr>
-                      <td><?php echo $value['Fecha_registro']; ?></td>
-                      <td><?php echo utf8_encode($value['Nombre_cliente']." ".$value['Apellidos_cliente']); ?></td>
-                      <td><?php echo utf8_encode($value['Nombre_empleado']." ".$value['Apellidos_empleado']);?></td>
-                      <td><?php echo $value['Status']; ?></td>
-                      <td><?php echo $value['Tipo']; ?></td>
-                      <td><?php echo utf8_encode($value['Observacion']); ?></td>
-                      <td> <a href="#">Aprobar</a></td>
-                      <td> <a href="#">Rechazar</a></td>
-                      <td> <a href="#">Ver Más...</a> </td>
-                    </tr>
-            <?php } ?>
-              </table>
+              </section>
               <div class="pager">
                    <ul>
                        <li class="change_page">Ant</li>
@@ -209,46 +155,14 @@
                  </select>
                  <b>registros</b>
                  <div class="right">
-                   <select class="find">
-                     <option value="">Fecha</option>
-                     <option value="">Cliente</option>
-                     <option value="">Vendedor</option>
-                   </select>
-                   <input type="text" name="Buscar" value="" placeholder="Solicitud">
+                   <b>Buscar: </b>
+                   <input type="text" name="Buscar" id="buscarDemos" placeholder="Solicitud">
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
-
               </div>
-              <table class="regis_produc">
-                <?php
-                 $productos = get_solicitudesDemos();
-                ?>
-                <tr>
-                  <th>Fecha de Solicitud</th>
-                  <th>Nombre Cliente</th>
-                  <th>Nombre Empleado</th>
-                  <th>Status</th>
-                  <th>Tipo</th>
-                  <th>Observacion</th>
-                  <th colspan="3">Opciones</th>
+              <section id="tablaDemos">
 
-                  <?php
-                   foreach ($productos as $value)
-                   {
-                  ?>
-                    <tr>
-                      <td><?php echo $value['Fecha_registro']; ?></td>
-                      <td><?php echo utf8_encode($value['Nombre_cliente']." ".$value['Apellidos_cliente']); ?></td>
-                      <td><?php echo utf8_encode($value['Nombre_empleado']." ".$value['Apellidos_empleado']);?></td>
-                      <td><?php echo $value['Status']; ?></td>
-                      <td><?php echo $value['Tipo']; ?></td>
-                      <td><?php echo utf8_encode($value['Observacion']); ?></td>
-                      <td> <a href="#">Aprobar</a></td>
-                      <td> <a href="#">Rechazar</a></td>
-                      <td> <a href="#">Ver Más...</a> </td>
-                    </tr>
-            <?php } ?>
-              </table>
+              </section>
               <div class="pager">
                    <ul>
                        <li class="change_page">Ant</li>
@@ -271,6 +185,8 @@
           </div>
       </div>
   </body>
-  <script src="../Public/js/modal.js"></script>
-  <script src="../Public/js/p_tabs_menus.js"></script>
+  <script src="../public/js/modal.js"></script>
+  <script src="../public/js/p_tabs_menus.js"></script>
+  <script type="text/javascript" src="../public/js/jquery.js"></script>
+  <script src="../public/js/busquedas.js"></script>
 </html>
