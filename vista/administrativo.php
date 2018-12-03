@@ -119,7 +119,7 @@
                     </div>
                 </section>
                 
-                <section id="tablaVentas" class="container-table">
+                <section id="tablaVentas" class="container-table tabla tablaVentas tablaDemos">
                
                     
                 </section>
@@ -155,72 +155,5 @@
            }
         });
 
-        
-  function obtener_ventas(ventas,opc, target, search)
-      {
-        $.ajax({
-          url: '../modelo/searches.php',
-          type: 'POST',
-          dataType: 'html',
-          data:
-          {
-            ventas: ventas,
-            opc: opc
-          },
-        })
-        .done(function(resultado)
-        {
-          $(target).html(resultado);
-        })
-          $(document).on('keyup',search,function()
-      {
-         var valorBusqueda=$(this).val();
-         if (valorBusqueda!="")
-         {
-           obtener_ventas(valorBusqueda,2);
-         }
-         else
-         {
-            obtener_ventas(null,2);
-         }
-       });
-      }
-      
-////////////////////////////////////////////////////////////////////////////////////
-//////////FUNCION PARA BUSCAR SOLICITUDES DE DEMOS EN CONJUNTO CON PHP////////////
-////////////////////////////////////////////////////////////////////////////////////
-      function obtener_demos(demos,opc, target, search)
-      {
-        $.ajax({
-          url: '../modelo/searches.php',
-          type: 'POST',
-          dataType: 'html',
-          data:
-          {
-            demos: demos,
-            opc: opc
-          },
-        })
-        .done(function(resultado)
-        {
-          $(target).html(resultado);
-        })
-          
-           $(document).on('keyup',search,function()
-      {
-         var valorBusqueda=$(this).val();
-         if (valorBusqueda!="")
-         {
-           obtener_demos(valorBusqueda,3);
-         }
-         else
-         {
-            obtener_demos(null,3);
-         }
-       });
-      }
-
-     
-        
     </script>
 </html>
