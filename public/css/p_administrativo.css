@@ -1,0 +1,133 @@
+*{
+    outline: none;
+}
+
+/* contenedor de tabs*/
+
+.container{
+    position: relative;
+}
+.content{
+    margin-top: 1.8vh;
+    height: 77.2vh;
+    width: 92%;
+    background-color: transparent;
+    display: inline-block;
+    background-size: cover;
+    float: left;
+    position: absolute;
+    display: none;
+}
+.content-active{
+    display: inline-block;
+    background-color: white;
+}
+
+.tab-active{
+    background-color: #0A468D !important;
+}
+
+.container-top{
+    width: 98%;
+    height: 10vh;
+    margin-left: 1%;
+    border-bottom: solid 3px #23B3D8;
+    padding: 1%;
+}
+
+.container-top p{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-style: normal;
+    
+}
+
+.container-title{
+    width: 96%;
+    height: 5vh;
+    margin-left: 2%;
+    padding-left: 1.5%;
+}
+
+.container-title p{
+    font-size: 18px;
+    color: #ABA9A9;
+    font-style: normal;
+    vertical-align: top;
+    margin-top: 1%;;
+}
+
+.container-filters{
+    width: 96%;
+    height: 8vh;
+    margin-left: 2%;
+    border-bottom: solid 1px #CCC;
+    border-top: solid 1px #CCC;
+    display: table;
+}
+
+.cf-left{
+    width: 40%;
+    display: table-cell;
+}
+.cf-left p{
+    float: left;
+    margin-left: 5%;
+}
+
+.cf-center{
+    width: 30%;
+    display: table-cell;
+}
+.cf-center p{
+    float: right;
+    margin-right: 5%;
+}
+
+.cf-right{
+    width: 30%;
+    display: table-cell;
+}
+
+.cf-right p{
+    float: right;
+    margin-right: 5%;
+}
+.container-table{
+    width: 96%;
+    height: 51.2vh;
+    margin-left: 2%;
+    background-color: lightcoral;
+}
+
+.find {
+      width: 20px;
+      height: 20px;
+      margin-left: 2px;
+}
+
+/*table*/
+table.regis_produc
+{
+  font-family: "Trebuch et MS", Arial,Helvatica;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 2%;
+}
+.regis_produc th, .regis_produc td
+{
+  border: 2px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background: white;
+}
+.regis_produc th
+{
+   border-bottom: 5px solid #ddd;
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: center;
+   background-color: #52D3BA;
+   color:white;
+}

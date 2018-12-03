@@ -9,6 +9,8 @@ $(document).ready(function(){
   $("#demos").on('click',function(){
     obtener_demos(null,3);
   });
+    
+    });
 
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////FUNCION PARA BUSCAR PRODUCTOS EN CONJUNTO CON PHP////////////////////
@@ -108,4 +110,4 @@ $(document).ready(function(){
          }
        });
 
-});
+

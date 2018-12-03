@@ -24,10 +24,11 @@ session_start();
                     window.location.href="login.php";
                 </script>';
             
-        }else if(isset($_SESSION['user']) && $_SESSION['user']['userTipo'] != "Administrador"){
-           
+        }else if(!($_SESSION['user']['userTipo'] == "Directivo" || $_SESSION['user']['userTipo'] == "Administrador")){
+//           
             $loc = "?target=".$_SESSION['user']['userTipo'];
             header("Location: ../controlador/redirect_user.php".$loc);
+        
         }
     ?>
     
@@ -44,7 +45,7 @@ session_start();
                    <?php 
                         echo $_SESSION['user']["userNombre"]." ".$_SESSION['user']['userApellido'];
                         echo "<br/>";
-                        echo "Puesto: ".$_SESSION['user']['userTipo'];
+                        echo "".$_SESSION['user']['userTipo'];
                     ?>
                 </figcaption>
             </figure>
@@ -68,68 +69,78 @@ session_start();
     
     <section id="container">
         
-        <section id="row" onclick="document.location = 'inventario.php'">
-            <div class="box box1">
-                <figure>
-                    <img src="../public/img/inventory_icon.png" alt="">
-                    <figcaption>
-                        Inventario
-                    </figcaption>
-                        
-                </figure>
-                
-            </div>
+        <section id="row">
+               
+            <a href="inventario.php">
+                <div class="box box1">
+                    <figure>
+                        <img src="../public/img/inventory_icon.png" alt="">
+                        <figcaption>
+                            Inventario
+                        </figcaption>
+                    </figure>
+                </div>
+            </a>
+            
+            <a href="vendedores.php">
+                <div class="box box2">
+                    <figure>
+                        <img src="../public/img/saleman_icon.png" alt="">
+                        <figcaption>
+                            Vendedores
+                        </figcaption>
+                    </figure>
+                </div>
+            </a>
 
-            <div class="box box2" onclick="document.location = 'vendedores.php'">
-                <figure>
-                    <img src="../public/img/saleman_icon.png" alt="">
-                    <figcaption>
-                        Vendedores
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div class="box box3" onclick="document.location = 'administrativo.php'">
-                <figure>
-                    <img src="../public/img/administrator_icon.png" alt="">
-                    <figcaption>
-                        Administrativos
-                    </figcaption>
-                </figure>
-            </div>
+           <a href="administrativo.php">
+                <div class="box box3">
+                    <figure>
+                        <img src="../public/img/administrator_icon.png" alt="">
+                        <figcaption>
+                            Administrativos
+                        </figcaption>
+                    </figure>
+                </div>
+            </a>
 
         </section>
      
         
         <section id="row" class="br">
         
-            
-            <div class="box box4" onclick="document.location = 'aplicacionistas.php'">
-                <figure>
-                    <img src="../public/img/engineer_icon.png" alt="">
-                    <figcaption>
-                        Aplicacionistas
-                    </figcaption>
-                </figure>
-            </div>
+            <a href="aplicacionistas.php">
+                <div class="box box4">
+                    <figure>
+                        <img src="../public/img/engineer_icon.png" alt="">
+                        <figcaption>
+                            Aplicacionistas
+                        </figcaption>
+                    </figure>
+                </div>
+            </a>
 
-            <div class="box box5" onclick="document.location = 'contrato.php'">
-                <figure>
-                    <img src="../public/img/contrato.png" alt="">
-                    <figcaption>
-                        Contratos
-                    </figcaption>
-                </figure>
-            </div>
-
-            <div class="box box6" onclick="document.location = 'demo.php'">        
-                <figure>
-                    <img src="../public/img/demo.png" alt="">
-                    <figcaption>
-                        Demos
-                    </figcaption>
-                </figure>
-            </div>
+           <a href="contrato">
+                <div class="box box5">
+                    <figure>
+                        <img src="../public/img/contrato.png" alt="">
+                        <figcaption>
+                            Contratos
+                        </figcaption>
+                    </figure>
+                </div>
+            </a>
+           
+            <a href="demo.php">
+                <div class="box box6">        
+                    <figure>
+                        <img src="../public/img/demo.png" alt="">
+                        <figcaption>
+                            Demos
+                        </figcaption>
+                    </figure>
+                </div>
+            </a>
         </section>
         
     </section>

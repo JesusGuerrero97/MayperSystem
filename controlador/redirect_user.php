@@ -6,6 +6,8 @@ if(isset($_GET['target'])){
     $location = "";
         
     switch($target){
+        
+        case "Directivo":
         case "Administrador":
             $location = '../vista/main.php';
             break;
@@ -15,12 +17,12 @@ if(isset($_GET['target'])){
             break;
 
         case "Asesor médico":
-//            $location = 'Location: ../paginas/vendedores.html';
             $location = '../vista/vendedores.php';
             break;
 
+        case "Logistica":
         case "Administrativo":
-            $location = '../vista/administrativos.php';
+            $location = '../vista/administrativo.php';
             break;
 
         case "Aplicacionista":
@@ -31,6 +33,7 @@ if(isset($_GET['target'])){
         
     /* REDIRECCIONAR A SU VISTA CORRESPODIENTE */
         
+    
     echo "<script type='text/javascript'>location.href ='$location';</script>";
 
 }else{
