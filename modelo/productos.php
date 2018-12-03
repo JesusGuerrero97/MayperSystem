@@ -19,9 +19,22 @@
         return $count;
     }
 
-    function set_product($Serie,$Clave,$Marca,$Modelo,$Software,$Accesorios,$Id_categoria,$Id_proveedor,$Id_status,)
+    function set_product($Serie,$Clave,$Marca,$Modelo,$Software,$Accesorios,$Id_categoria,$Id_proveedor,$Id_status,$Id_sucursal)
     {
+      $con = conectar();
 
+      $query = "insert into productos(Id_productos,Serie,Clave,Marca,Modelo,Software,Accesorios,Id_categoria,Id_proveedor,Id_status,Id_sucursal) VALUES(NULL,'$Serie','$Clave','$Marca','$Modelo','$Software','$Accesorios',$Id_categoria,$Id_proveedor,$Id_status,$Id_sucursal);";
+      if($con)
+      {
+        if ($con->query($query))
+        {
+          return 1;
+        }
+        else
+        {
+          return 0;
+        }
+      }
     }
 
 ?>

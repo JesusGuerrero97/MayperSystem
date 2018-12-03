@@ -222,6 +222,10 @@ div.ce
 }
 
 /* ESTILO MODAL AGREGAR*/
+input[type=button].add{
+  height: 30px;
+  cursor: pointer;
+}
 .container-add{
   padding: 20px;
   margin: 0 auto;

@@ -72,7 +72,7 @@
             </div>
             <div class="db">
               <p class="tp">Configuración de Productos</p>
-              <div id="add"><input type="button" class="add" name="" value="+ Productos"></div>
+              <div><input  id="add" type="button" class="add" name="" value="+ Productos"></div>
               <!-- Modal agregar productos -->
               <div id="ModAdd" class="modal">
                 <!-- Modal content -->
@@ -83,7 +83,7 @@
                   </div>
                   <div class="modal-body">
                     <div class="container-add">
-                        <form class="frm" action="" method="post">
+                        <form class="frm" action="../controlador/addProductos.php" method="post">
                           <input class="inputadd" type="text" name="Serie" placeholder="Serie del producto">
                           <input class="inputadd" type="text" name="Clave" placeholder="Clave">
                           <input class="inputadd" type="text" name="Marca" placeholder="Marca">
@@ -97,25 +97,25 @@
                             $estatus = get_estatus();
                             $sucursal = get_sucursales();
                            ?>
-                          <select class="selectadd">
+                          <select name="Id_categoria" class="selectadd">
                             <option value="0">Seleccione una categoria...</option>
                             <?php foreach ($categorias as $cate) {
                               echo "<option value=".$cate['Id_categoria'].">".utf8_encode($cate['Nombre_categorias'])."</option>";
                             } ?>
                           </select>
-                          <select  class="selectadd2">
+                          <select name="Id_proveedor" class="selectadd2">
                             <option value="0">Seleccione un proveedor...</option>
                             <?php foreach ($proveedores as $provee) {
                               echo "<option value=".$provee['Id_proveedor'].">".utf8_encode($provee['Nombre_proveedor'])."</option>";
                             } ?>
                           </select>
-                          <select class="selectadd3">
+                          <select name="Id_status" class="selectadd3">
                             <option value="0">Seleccione un estatus...</option>
                             <?php foreach ($estatus as $status) {
                               echo "<option value=".$status['Id_status'].">".utf8_encode($status['Nombre_status'])."</option>";
                             } ?>
                           </select>
-                          <select class="selectadd4">
+                          <select name="Id_sucursal" class="selectadd4">
                             <option value="0">Selecione la sucursal...</option>
                             <?php foreach ($sucursal as $sucu) {
                               echo "<option value=".$sucu['Id_sucursal'].">".utf8_encode($sucu['Nombre_sucursal'])."</option>";
@@ -244,4 +244,5 @@
   <script src="../public/js/p_tabs_menus.js"></script>
   <script type="text/javascript" src="../public/js/jquery.js"></script>
   <script src="../public/js/busquedas.js"></script>
+  <script type="text/javascript" src="../public/js/addproduct_modal.js"></script>
 </html>
