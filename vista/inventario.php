@@ -72,7 +72,62 @@
             </div>
             <div class="db">
               <p class="tp">Configuración de Productos</p>
-              <a href=""> <input type="button" class="add" name="" value="+ Productos"> </a>
+              <div id="add"><input type="button" class="add" name="" value="+ Productos"></div>
+              <!-- Modal agregar productos -->
+              <div id="ModAdd" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content modal-content-add">
+                  <div class="modal-header">
+                    <span class="closeadd">&times;</span>
+                    <h2>Agregar producto</h2>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container-add">
+                        <form class="frm" action="" method="post">
+                          <input class="inputadd" type="text" name="Serie" placeholder="Serie del producto">
+                          <input class="inputadd" type="text" name="Clave" placeholder="Clave">
+                          <input class="inputadd" type="text" name="Marca" placeholder="Marca">
+                          <input class="inputadd" type="text" name="Modelo" placeholder="Modelo">
+                          <textarea class="txt1" rows="4" cols="40" name="Software" placeholder="Software"></textarea>
+                          <textarea class="txt2" rows="4" cols="40" name="Accesorios" placeholder="Accesorios"></textarea>
+                          <?php
+                            require_once('../modelo/inventario.php');
+                            $categorias = get_categorias();
+                            $proveedores = get_proveedores();
+                            $estatus = get_estatus();
+                            $sucursal = get_sucursales();
+                           ?>
+                          <select class="selectadd">
+                            <option value="0">Seleccione una categoria...</option>
+                            <?php foreach ($categorias as $cate) {
+                              echo "<option value=".$cate['Id_categoria'].">".utf8_encode($cate['Nombre_categorias'])."</option>";
+                            } ?>
+                          </select>
+                          <select  class="selectadd2">
+                            <option value="0">Seleccione un proveedor...</option>
+                            <?php foreach ($proveedores as $provee) {
+                              echo "<option value=".$provee['Id_proveedor'].">".utf8_encode($provee['Nombre_proveedor'])."</option>";
+                            } ?>
+                          </select>
+                          <select class="selectadd3">
+                            <option value="0">Seleccione un estatus...</option>
+                            <?php foreach ($estatus as $status) {
+                              echo "<option value=".$status['Id_status'].">".utf8_encode($status['Nombre_status'])."</option>";
+                            } ?>
+                          </select>
+                          <select class="selectadd4">
+                            <option value="0">Selecione la sucursal...</option>
+                            <?php foreach ($sucursal as $sucu) {
+                              echo "<option value=".$sucu['Id_sucursal'].">".utf8_encode($sucu['Nombre_sucursal'])."</option>";
+                            } ?>
+                          </select>
+                          <input class="agregar" type="submit" value="Agregar">
+                          <input class="cancelar" type="button" value="Cancelar">
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="find">
                 <b>Mostrar</b>
                  <select>

@@ -220,3 +220,112 @@ div.ce
 .tab-active{
     background-color: #0A468D !important;
 }
+
+/* ESTILO MODAL AGREGAR*/
+.container-add{
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+input[type="text"].inputadd
+{
+  margin-left: 1%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 2%;
+  float: left;
+  text-align: left;
+}
+select.selectadd
+{
+  float:left;
+  width: 23%;
+  margin-left: 1%;
+  margin-top: 2%;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+select.selectadd2
+{
+  clear: both;
+  float: left;
+  width: 23%;
+  height: 30px;
+  margin-top: 4%;
+  margin-left: 1%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+select.selectadd3
+{
+  float: left;
+  width: 23%;
+  height: 30px;
+  margin-top: 4%;
+  margin-left: 2%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+select.selectadd4
+{
+  float: left;
+  width: 23%;
+  height: 30px;
+  margin-top: 4%;
+  margin-left: 2%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+textarea.txt1{
+  float: left;
+  margin-left: 1%;
+  margin-top: 2%;
+}
+textarea.txt2
+{
+  float: left;
+  margin-left: 1%;
+  margin-top: 2%;
+}
+input[type=submit]
+{
+    clear: both;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    margin-left: 16%;
+    width: 22%;
+    margin-top: 2%;
+    font-size: 110%;
+}
+input[type=submit]:hover
+{
+    background-color: #45a049;
+}
+input.cancelar
+{
+  width: 22%;
+  background-color: #DC3C3C;
+  color: white;
+  padding: 1%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  margin-left: 16%;
+  margin-top: 2%;
+  font-size: 110%;
+}
+input.cancelar:hover
+{
+  background-color: #C53A3A;
+}

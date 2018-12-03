@@ -13,5 +13,55 @@
         return null;
       }
   }
+  function get_categorias()
+  {
+    $con = conectar();
+    if($con)
+    {
+      $result = $con->query("select * from categorias");
+      return $result;
+    }
+    else {
+      return null;
+    }
+  }
+
+  function get_proveedores()
+  {
+    $con = conectar();
+    if($con)
+    {
+      $result = $con->query("select * from proveedores");
+      return $result;
+    }
+    else {
+      return null;
+    }
+  }
+  function get_estatus()
+  {
+    $con = conectar();
+    if($con)
+    {
+      $result = $con->query("select * from status");
+      return $result;
+    }
+    else {
+      return null;
+    }
+  }
+
+  function get_sucursales()
+  {
+    $con = conectar();
+    if($con)
+    {
+      $result = $con->query("select * from sucursales");
+      return $result;
+    }
+    else {
+      return null;
+    }
+  }
 
  ?>

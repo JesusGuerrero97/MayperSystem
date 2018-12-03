@@ -75,7 +75,7 @@ select.input{
 .content{
     position: absolute;
     display: none;
-    z-index: 1;     
+    z-index: 1;
 }
 
 .content-active{
@@ -106,7 +106,7 @@ select.input{
 }
 
 h2{
-   text-align: center; 
+   text-align: center;
 }
 
 .error-mensaje{
