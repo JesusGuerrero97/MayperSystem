@@ -142,7 +142,7 @@
                  </div>
 
               </div>
-              <section id="tabla">
+              <section class="tabla">
 
               </section>
               <div class="pager">
@@ -179,7 +179,7 @@
                  </div>
 
               </div>
-              <section id="tablaVentas">
+              <section class="tablaVentas">
 
               </section>
               <div class="pager">
@@ -215,7 +215,7 @@
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
               </div>
-              <section id="tablaDemos">
+              <section class="tablaDemos">
 
               </section>
               <div class="pager">

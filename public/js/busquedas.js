@@ -9,7 +9,7 @@ $(document).ready(function(){
       $("#demos").on('click',function(){
         obtener_demos(null,3);
   });
-    
+
 });
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,8 @@ $(document).ready(function(){
       })
       .done(function(resultado)
       {
-        $("#tabla").html(resultado);
+        $(".tabla").html(resultado);
+        //$(".tabla").html(resultado);
       })
     }
     $(document).on('keyup','#busqueda',function()
@@ -62,7 +63,7 @@ $(document).ready(function(){
         })
         .done(function(resultado)
         {
-          $("#tablaVentas").html(resultado);
+          $(".tablaVentas").html(resultado);
         })
       }
       $(document).on('keyup','#buscarVenta',function()
@@ -94,7 +95,7 @@ $(document).ready(function(){
         })
         .done(function(resultado)
         {
-          $("#tablaDemos").html(resultado);
+          $(".tablaDemos").html(resultado);
         })
       }
       $(document).on('keyup','#buscarDemos',function()
@@ -109,5 +110,3 @@ $(document).ready(function(){
             obtener_demos(null,3);
          }
        });
-
-
