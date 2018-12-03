@@ -21,7 +21,7 @@
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
       
-        <div class="tab tab-active in ce" id="venas">
+        <div class="tab tab-active in ce" id="tab_ventas">
           <img class="logo" src="../Public/img/aprovaciones.png" alt="">
           <p class="vi">Aprobaciones</p>
         </div>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="cf-center">
                         <p>Filtar por 
-                            <select>
+                            <select id="select_tipo">
                                 <option value="1">Venta</option>
                                 <option value="2">Demo</option>
                             </select>
@@ -135,11 +135,92 @@
     <script src="../Public/js/modal.js"></script>
     <script src="../Public/js/p_tabs_menus.js"></script>
     <script type="text/javascript" src="../public/js/jquery.js"></script>
-    <script src="../public/js/busquedas.js"></script>
+<!--    <script src="../public/js/busquedas.js"></script>-->
     
     <script type="text/javascript">
         
-      window.onload = obtener_ventas(null,2)
+    window.onload = obtener_ventas(null,2, "#tablaVentas","#buscarVenta");
+        
+        var select_tipo = document.getElementById('select_tipo');
+        select_tipo.addEventListener('change', (e)=>{
+           
+           switch(select_tipo.options[select_tipo.selectedIndex].text){
+                   
+                case "Venta":
+                   obtener_ventas(null,2, "#tablaVentas","#buscarVenta");
+                   break;
+               case "Demo":
+                   obtener_demos(null,3, "#tablaVentas","#buscarVenta");
+                   break;
+           }
+        });
+
+        
+  function obtener_ventas(ventas,opc, target, search)
+      {
+        $.ajax({
+          url: '../modelo/searches.php',
+          type: 'POST',
+          dataType: 'html',
+          data:
+          {
+            ventas: ventas,
+            opc: opc
+          },
+        })
+        .done(function(resultado)
+        {
+          $(target).html(resultado);
+        })
+          $(document).on('keyup',search,function()
+      {
+         var valorBusqueda=$(this).val();
+         if (valorBusqueda!="")
+         {
+           obtener_ventas(valorBusqueda,2);
+         }
+         else
+         {
+            obtener_ventas(null,2);
+         }
+       });
+      }
+      
+////////////////////////////////////////////////////////////////////////////////////
+//////////FUNCION PARA BUSCAR SOLICITUDES DE DEMOS EN CONJUNTO CON PHP////////////
+////////////////////////////////////////////////////////////////////////////////////
+      function obtener_demos(demos,opc, target, search)
+      {
+        $.ajax({
+          url: '../modelo/searches.php',
+          type: 'POST',
+          dataType: 'html',
+          data:
+          {
+            demos: demos,
+            opc: opc
+          },
+        })
+        .done(function(resultado)
+        {
+          $(target).html(resultado);
+        })
+          
+           $(document).on('keyup',search,function()
+      {
+         var valorBusqueda=$(this).val();
+         if (valorBusqueda!="")
+         {
+           obtener_demos(valorBusqueda,3);
+         }
+         else
+         {
+            obtener_demos(null,3);
+         }
+       });
+      }
+
+     
         
     </script>
 </html>

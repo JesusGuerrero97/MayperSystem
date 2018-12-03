@@ -5,13 +5,13 @@
 
     if($_POST['opc']==1)
     {
-        if($_POST['productos']==null)
+        if($_POST['busqueda']==null)
         {
           $consulta='select productos.`Modelo`,productos.`Clave`,categorias.`Nombre_categorias`, status.`Nombre_status` FROM productos INNER JOIN categorias ON productos.`Id_categoria`=categorias.`Id_categoria`INNER JOIN status ON status.`Id_status`= productos.`Id_status`;';
         }
-        else if(isset($_POST['productos']))
+        else if(isset($_POST['busqueda']))
         {
-          $val=$con->real_escape_string($_POST['productos']);
+          $val=$con->real_escape_string($_POST['busqueda']);
           $consulta="select productos.`Modelo`,productos.`Clave`,categorias.`Nombre_categorias`, status.`Nombre_status` FROM productos INNER JOIN categorias ON productos.`Id_categoria`=categorias.`Id_categoria`INNER JOIN status ON status.`Id_status`= productos.`Id_status` WHERE productos.Modelo LIKE '%".$val."%' OR categorias.Nombre_categorias LIKE '%".$val."%' OR status.Nombre_status LIKE '%".$val."%';";
         }
           $buscarProductos=$con->query($consulta);
@@ -47,13 +47,13 @@
       }
       else if($_POST['opc']==2)
       {
-          if($_POST['ventas']==null)
+          if($_POST['busqueda']==null)
           {
             $consulta='select solicitudes.Id_solictud,solicitudes.Fecha_registro,clientes.Nombre_cliente,clientes.Apellidos_cliente,empleados.Nombre AS Nombre_empleado,empleados.Apellidos AS Apellidos_empleado,solicitudes.Status,solicitudes.Tipo,solicitudes.Observacion FROM solicitudes INNER JOIN clientes ON solicitudes.Id_cliente= clientes.Id_cliente INNER JOIN vendedores ON solicitudes.Id_vendedor=vendedores.Id_vendedor INNER JOIN empleados ON vendedores.Id_empleado = empleados.Id_empleado WHERE solicitudes.Tipo="Venta";';
           }
-          else if (isset($_POST['ventas']))
+          else if (isset($_POST['busqueda']))
           {
-            $val=$con->real_escape_string($_POST['ventas']);
+            $val=$con->real_escape_string($_POST['busqueda']);
             $consulta="select solicitudes.Id_solictud,solicitudes.Fecha_registro,clientes.Nombre_cliente,clientes.Apellidos_cliente,empleados.Nombre AS Nombre_empleado,empleados.Apellidos AS Apellidos_empleado,solicitudes.Status,solicitudes.Tipo,solicitudes.Observacion FROM solicitudes INNER JOIN clientes ON solicitudes.Id_cliente= clientes.Id_cliente INNER JOIN vendedores ON solicitudes.Id_vendedor=vendedores.Id_vendedor INNER JOIN empleados ON vendedores.Id_empleado = empleados.Id_empleado WHERE solicitudes.Tipo='Venta' AND (clientes.Nombre_cliente LIKE '%".$val."%' OR clientes.Apellidos_cliente LIKE '%".$val."%' OR empleados.Nombre LIKE '%".$val."%' OR empleados.Apellidos LIKE '%".$val."%' OR solicitudes.Status LIKE '%".$val."%' OR solicitudes.Fecha_registro LIKE '%".$val."%');";
           }
           $buscarVentas=$con->query($consulta);
@@ -94,13 +94,13 @@
         }
         else if($_POST['opc']==3)
         {
-          if($_POST['demos']==null)
+          if($_POST['busqueda']==null)
           {
             $consulta='select solicitudes.Id_solictud,solicitudes.Fecha_registro,clientes.Nombre_cliente,clientes.Apellidos_cliente,empleados.Nombre AS Nombre_empleado,empleados.Apellidos AS Apellidos_empleado,solicitudes.Status,solicitudes.Tipo,solicitudes.Observacion FROM solicitudes INNER JOIN clientes ON solicitudes.Id_cliente= clientes.Id_cliente INNER JOIN vendedores ON solicitudes.Id_vendedor=vendedores.Id_vendedor INNER JOIN empleados ON vendedores.Id_empleado = empleados.Id_empleado WHERE solicitudes.Tipo="Demo";';
           }
-          else if(isset($_POST['demos']))
+          else if(isset($_POST['busqueda']))
           {
-            $val=$con->real_escape_string($_POST['demos']);
+            $val=$con->real_escape_string($_POST['busqueda']);
             $consulta="select solicitudes.Id_solictud,solicitudes.Fecha_registro,clientes.Nombre_cliente,clientes.Apellidos_cliente,empleados.Nombre AS Nombre_empleado,empleados.Apellidos AS Apellidos_empleado,solicitudes.Status,solicitudes.Tipo,solicitudes.Observacion FROM solicitudes INNER JOIN clientes ON solicitudes.Id_cliente= clientes.Id_cliente INNER JOIN vendedores ON solicitudes.Id_vendedor=vendedores.Id_vendedor INNER JOIN empleados ON vendedores.Id_empleado = empleados.Id_empleado WHERE solicitudes.Tipo='Demo' AND (clientes.Nombre_cliente LIKE '%".$val."%' OR clientes.Apellidos_cliente LIKE '%".$val."%' OR empleados.Nombre LIKE '%".$val."%' OR empleados.Apellidos LIKE '%".$val."%' OR solicitudes.Status LIKE '%".$val."%' OR solicitudes.Fecha_registro LIKE '%".$val."%');";
           }
           $buscarDemos=$con->query($consulta);

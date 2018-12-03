@@ -1,22 +1,22 @@
 $(document).ready(function(){
-  obtener_productos(null,1);
-  $("#equipos").on('click',function(){
-    obtener_productos(null,1);
-  });
-  $("#ventas").on('click',function(){
-    obtener_ventas(null,2);
-  });
-  $("#demos").on('click',function(){
-    obtener_demos(null,3);
+      obtener_productos(null,1);
+      $("#equipos").on('click',function(){
+        obtener_productos(null,1);
+      });
+      $("#ventas").on('click',function(){
+        obtener_ventas(null,2);
+      });
+      $("#demos").on('click',function(){
+        obtener_demos(null,3);
   });
     
-    });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////FUNCION PARA BUSCAR PRODUCTOS EN CONJUNTO CON PHP////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-    function obtener_productos(productos,opc)
+    function obtener_productos(busqueda,opc)
     {
       $.ajax({
         url: '../modelo/searches.php',
@@ -24,7 +24,7 @@ $(document).ready(function(){
         dataType: 'html',
         data:
         {
-          productos: productos,
+          busqueda: busqueda,
           opc: opc
         },
       })
@@ -48,7 +48,7 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////////////////////////////////
 //////////FUNCION PARA BUSCAR SOLICITUDES DE VENTAS EN CONJUNTO CON PHP////////////
 ////////////////////////////////////////////////////////////////////////////////////
-      function obtener_ventas(ventas,opc)
+      function obtener_ventas(busqueda,opc)
       {
         $.ajax({
           url: '../modelo/searches.php',
@@ -56,7 +56,7 @@ $(document).ready(function(){
           dataType: 'html',
           data:
           {
-            ventas: ventas,
+            busqueda: busqueda,
             opc: opc
           },
         })
@@ -80,7 +80,7 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////////////////////////////////
 //////////FUNCION PARA BUSCAR SOLICITUDES DE DEMOS EN CONJUNTO CON PHP////////////
 ////////////////////////////////////////////////////////////////////////////////////
-      function obtener_demos(demos,opc)
+      function obtener_demos(busqueda,opc)
       {
         $.ajax({
           url: '../modelo/searches.php',
@@ -88,7 +88,7 @@ $(document).ready(function(){
           dataType: 'html',
           data:
           {
-            demos: demos,
+            busqueda: busqueda,
             opc: opc
           },
         })
