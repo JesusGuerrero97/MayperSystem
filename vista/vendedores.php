@@ -48,6 +48,7 @@
             </figure>
         </div>
     </div>
+<!--
     <div id="noti">
         <div class="cont">
             <div class="notification-pane" id="mynotification">
@@ -56,7 +57,7 @@
                </figure>
             </div>
             <div id="myModal" class="modal">
-                <!-- Modal content -->
+                 Modal content 
                 <div class="modal-content">
                     <div class="modal-header">
                          <span class="close">&times;</span>
@@ -75,6 +76,7 @@
             </div>
           </div>
     </div>
+-->
 
     <div class="container">
 <!--       primer contenedor-->
@@ -247,22 +249,6 @@
                         ?>
                         </table>
                     </div>
-                    
-                  <div class="pager">
-                       <ul>
-                           <li class="change_page ">«</li>
-                           <?php
-                                require_once('../modelo/productos.php');
-                                $count = get_count_pager();
-                           
-                                for($i = 0; $i<$count; $i++){
-                                    echo "<li class='page-active'><a href=''>".($i+1)."</a></li>";
-                                }
-                           
-                           ?>
-                           <li class="change_page">»</li>
-                       </ul>   
-                  </div>
                 </section>
             </div>
         </div>
@@ -340,17 +326,7 @@
                                     }
                                 ?>
                                 
-                            </div>
-
-                          <div class="pager">
-                               <ul>
-                                   <li class="change_page ">«</li>
-                                   <li class="page-active"><a href="">1</a></li>
-                                   <li><a href="">2</a></li>
-                                   <li><a href="">3</a></li>
-                                   <li class="change_page">»</li>
-                               </ul>   
-                          </div>
+                            </div>   
                     </div>
                 </section>
             </div>

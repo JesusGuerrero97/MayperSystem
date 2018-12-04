@@ -18,7 +18,8 @@
 
                     $pager.="<li class='change_page'>»</li>";
                 $pager.="</ul>";
-              $pager.="</div>";
+                $pager.="</div>";
+                $pager.="</section>";
             
             return $pager;
         }

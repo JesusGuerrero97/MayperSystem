@@ -6,6 +6,7 @@ table.addEventListener('click', (e)=>{
    
     if(e.target.classList.contains('btn_table')){
         
+        console.log("hd");
         e.target.classList.add("checked");
         add_product_to_list(e.target.parentElement.parentElement.cloneNode(true))
     }

@@ -34,8 +34,7 @@ include('conexion.php');
                 INNER JOIN vendedores AS v ON s.Id_vendedor=v.Id_vendedor 
                 INNER JOIN empleados AS e ON v.Id_empleado = e.Id_empleado
                 WHERE s.Tipo = '$tipo'
-                AND s.Status='$status'
-                LIMIT $nreg OFFSET $npages";
+                AND s.Status='$status'";
           }
           else{
               
@@ -46,16 +45,20 @@ include('conexion.php');
             INNER JOIN empleados AS e ON v.Id_empleado = e.Id_empleado 
             WHERE s.Tipo='$tipo'
             AND s.Status='$status'
-           AND  CONCAT(s.Fecha_registro, ' ', CONCAT(c.Nombre_cliente, ' ', c.Apellidos_cliente), ' ', CONCAT(e.Nombre, ' ', e.Apellidos), ' ',s.Status, ' ', s.Tipo) LIKE '%$busqueda%'
-           LIMIT $nreg OFFSET $npages";
+           AND  CONCAT(s.Fecha_registro, ' ', CONCAT(c.Nombre_cliente, ' ', c.Apellidos_cliente), ' ', CONCAT(e.Nombre, ' ', e.Apellidos), ' ',s.Status, ' ', s.Tipo) LIKE '%$busqueda%'";
               
           }
+            
           $buscarDemos=$con->query($consulta);
             
 //            echo "<p>$consulta</p>";
+            $rows = $buscarDemos->num_rows;
         
+            $buscarDemos = $con->query($consulta.="LIMIT $nreg OFFSET $npages");
+            
           if($buscarDemos->num_rows > 0)
           {
+            $tabla.="</section>";
              $tabla.=
              '<table class="regis_produc">
                 <tr>
@@ -91,7 +94,7 @@ include('conexion.php');
             $tabla.="No se encontraron coincidencias con sus criterios de búsqueda.";
           }
             require_once('../controlador/config.php');
-            echo $tabla.= set_pager($buscarDemos->num_rows, $nreg);
+            echo $tabla.= set_pager($rows, $nreg);
         }
         
         

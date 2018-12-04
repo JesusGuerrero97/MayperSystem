@@ -9,7 +9,8 @@
 }
 .content{
     margin-top: 1.8vh;
-    height: 77.2vh;
+    height: auto;
+    min-height: 77.2vh;
     width: 92%;
     background-color: transparent;
     display: inline-block;
@@ -96,7 +97,7 @@
 }
 .container-table{
     width: 96%;
-    height: 51.2vh;
+    height: auto;
     margin-left: 2%;
     background-color: lightcoral;
 }
@@ -110,10 +111,12 @@
 /*table*/
 table.regis_produc
 {
-  font-family: "Trebuch et MS", Arial,Helvatica;
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 2%;
+    font-family: "Trebuch et MS", Arial,Helvatica;
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+    margin-bottom: 10%;
 }
 .regis_produc th, .regis_produc td
 {
