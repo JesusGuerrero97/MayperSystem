@@ -11,7 +11,10 @@ $(document).ready(function(){
   });
 
 });
-
+function hola(id)
+{
+  alert(id);
+}
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////FUNCION PARA BUSCAR PRODUCTOS EN CONJUNTO CON PHP////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -34,7 +37,7 @@ $(document).ready(function(){
         //$(".tabla").html(resultado);
       })
     }
-    $(document).on('keyup','#busqueda',function()
+    $(document).on('keyup','.busqueda',function()
     {
        var valorBusqueda=$(this).val();
        if (valorBusqueda!="")
@@ -66,7 +69,7 @@ $(document).ready(function(){
           $(".tablaVentas").html(resultado);
         })
       }
-      $(document).on('keyup','#buscarVenta',function()
+      $(document).on('keyup','.busqueda',function()
       {
          var valorBusqueda=$(this).val();
          if (valorBusqueda!="")
@@ -98,7 +101,7 @@ $(document).ready(function(){
           $(".tablaDemos").html(resultado);
         })
       }
-      $(document).on('keyup','#buscarDemos',function()
+      $(document).on('keyup','.busqueda',function()
       {
          var valorBusqueda=$(this).val();
          if (valorBusqueda!="")

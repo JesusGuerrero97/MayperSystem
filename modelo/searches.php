@@ -2,20 +2,20 @@
     require_once('conexion.php');
     $con = conectar();
     $tabla="";
-
+    $id="";
     if($_POST['opc']==1)
     {
         if($_POST['busqueda']==null)
         {
-          $consulta='select productos.`Modelo`,productos.`Clave`,categorias.`Nombre_categorias`, status.`Nombre_status` FROM productos INNER JOIN categorias ON productos.`Id_categoria`=categorias.`Id_categoria`INNER JOIN status ON status.`Id_status`= productos.`Id_status`;';
+          $consulta='select productos.Id_productos,productos.`Modelo`,productos.`Clave`,categorias.`Nombre_categorias`, status.`Nombre_status` FROM productos INNER JOIN categorias ON productos.`Id_categoria`=categorias.`Id_categoria`INNER JOIN status ON status.`Id_status`= productos.`Id_status`;';
         }
         else if(isset($_POST['busqueda']))
         {
           $val=$con->real_escape_string($_POST['busqueda']);
-          $consulta="select productos.`Modelo`,productos.`Clave`,categorias.`Nombre_categorias`, status.`Nombre_status` FROM productos INNER JOIN categorias ON productos.`Id_categoria`=categorias.`Id_categoria`INNER JOIN status ON status.`Id_status`= productos.`Id_status` WHERE productos.Modelo LIKE '%".$val."%' OR categorias.Nombre_categorias LIKE '%".$val."%' OR status.Nombre_status LIKE '%".$val."%';";
+          $consulta="select productos.Id_productos, productos.`Modelo`,productos.`Clave`,categorias.`Nombre_categorias`, status.`Nombre_status` FROM productos INNER JOIN categorias ON productos.`Id_categoria`=categorias.`Id_categoria`INNER JOIN status ON status.`Id_status`= productos.`Id_status` WHERE productos.Modelo LIKE '%".$val."%' OR categorias.Nombre_categorias LIKE '%".$val."%' OR status.Nombre_status LIKE '%".$val."%';";
         }
-          $buscarProductos=$con->query($consulta);
-          if($buscarProductos->num_rows > 0)
+        $buscarProductos=$con->query($consulta);
+        if($buscarProductos->num_rows > 0)
           {
              $tabla.=
              '<table class="regis_produc">
@@ -34,8 +34,8 @@
                         <td>'.$filaProductos["Clave"].'</td>
                         <td>'.$filaProductos["Nombre_categorias"].'</td>
                         <td>'.$filaProductos["Nombre_status"].'</td>
-                        <td> <a href="#">Editar</a></td>
-                        <td> <a href="#">Eliminar</a></td>
+                        <td> <input type="button" class="modi" value="Modificar"></td>
+                        <td><input type="button" class="modi elim" value="Eliminar"></td>
                     </tr>';
                 }
                 $tabla.='</table>';
@@ -80,8 +80,8 @@
                         <td>'.$filaVentas['Status'].'</td>
                         <td>'.$filaVentas['Tipo'].'</td>
                         <td>'.utf8_encode($filaVentas['Observacion']).'</td>
-                        <td> <a href="#">Editar</a></td>
-                        <td> <a href="#">Eliminar</a></td>
+                        <td> <a href="#">Aprobar</a></td>
+                        <td> <a href="#">Rechazar</a></td>
                         <td> <a href="#">Ver más...</a></td>
                     </tr>';
                 }
@@ -127,8 +127,8 @@
                         <td>'.$filaDemos['Status'].'</td>
                         <td>'.$filaDemos['Tipo'].'</td>
                         <td>'.utf8_encode($filaDemos['Observacion']).'</td>
-                        <td> <a href="#">Editar</a></td>
-                        <td> <a href="#">Eliminar</a></td>
+                        <td> <a href="#">Aprobar</a></td>
+                        <td> <a href="#">Rechazar</a></td>
                         <td> <a href="#">Ver más...</a></td>
                     </tr>';
                 }

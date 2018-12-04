@@ -38,16 +38,16 @@
                 </figcaption>
             </figure>
         </div>
-
     </div>
-    <div id="noti">
+  <div class="father">
+    <!--<div id="noti">
         <div class="notification-pane" id="mynotification">
            <figure>
                 <img class="notification_image" src="../Public/img/notification_icon.png" alt="notificacion" title="Notificación">
            </figure>
        </div>
        <div id="myModal" class="modal">
-         <!-- Modal content -->
+         <!-- Modal content
          <div class="modal-content">
            <div class="modal-header">
              <span class="close">&times;</span>
@@ -64,7 +64,7 @@
                <img class="notification_image" src="../Public/img/exit.png" alt="Cerrar sesión" title="Cerrar Sesion">
           </figure>
       </div>
-    </div>
+    </div>-->
       <div class="container">
           <div class="content content-active">
             <div class="inv">
@@ -137,7 +137,7 @@
                  <b>registros</b>
                  <div class="right">
                    <b>Buscar: </b>
-                   <input type="text" name="busqueda" id="busqueda"  placeholder="(ej. Producto,Categoria,Estatus)">
+                   <input type="text" name="busqueda" id="busqueda" class="busqueda" placeholder="(ej. Producto,Categoria,Estatus)">
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
 
@@ -174,7 +174,7 @@
                  <b>registros</b>
                  <div class="right">
                    <b>Buscar: </b>
-                   <input type="text" name="Buscar" id="buscarVenta" placeholder="(ej.Fecha,Clientes,Empleados,Estatus)">
+                   <input type="text" name="Buscar" id="buscarVenta" class="busqueda" placeholder="(ej.Fecha,Clientes,Empleados,Estatus)">
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
 
@@ -211,7 +211,7 @@
                  <b>registros</b>
                  <div class="right">
                    <b>Buscar: </b>
-                   <input type="text" name="Buscar" id="buscarDemos" placeholder="Solicitud">
+                   <input type="text" name="Buscar" id="buscarDemos"  class="busqueda" placeholder="Solicitud">
                    <img class="find" src="../public/img/find.png" alt="">
                  </div>
               </div>
@@ -239,6 +239,7 @@
               Hola es el body 6
           </div>
       </div>
+    </div>
   </body>
   <script src="../public/js/modal.js"></script>
   <script src="../public/js/p_tabs_menus.js"></script>

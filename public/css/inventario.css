@@ -78,7 +78,7 @@ div.right {
 
 input[type=text] {
   height: 30px;
-  width: 200px;  
+  width: 200px;
 }
 table.regis_produc
 {
@@ -86,6 +86,7 @@ table.regis_produc
   border-collapse: collapse;
   width: 100%;
   margin-top: 2%;
+  margin-bottom: 7%;
 }
 .regis_produc th, .regis_produc td
 {

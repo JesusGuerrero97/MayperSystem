@@ -1,12 +1,17 @@
 *{
     box-sizing: border-box;
 }
+
 body{
     padding: 0;
     margin: 0;
     border:none;
     width: 100%;
     background-color: #ccc;
+}
+div.father{
+  height: auto;
+  margin-top: 20vh;
 }
 #sechead{
     /*position: fixed;*/
@@ -16,12 +21,17 @@ body{
     background-size: cover;
     display: inline-block;
     background-attachment: fixed;
+    position: fixed;
+    z-index: 1000000;
+
+    top:0;
 }
 #noti
 {
-  height: 80.1vh;
+  height: 100%;
+  /* min-height: 80.1vh; /*80.1vh*/
   width: 8%;
-  background-color: #333B3E;/*333B3E*/
+  background-color: transparent;/*333B3E*/
   background-size: cover;
   display: inline-block;
   background-attachment: fixed;
@@ -29,8 +39,10 @@ body{
   position:relative;
   margin-top: -1.1vh;
   padding:1%;
-  overflow-y: visible;
-  overflow-x: visible;
+  /* overflow-y: visible;
+  overflow-x: visible; */
+  overflow: hidden;
+
 }
 input[type="button"]
 {
@@ -58,7 +70,7 @@ div.in
   margin-left: 1%;
   width: 7%;
   height: 110px;
-  margin-top: 40px;
+  margin-top: 25px;
   border-radius: 12px;
   cursor: pointer;
   font-size: 15px;
@@ -204,8 +216,10 @@ div.ce
 }
 .content{
     margin-top: 1.8vh;
-    height: 77.2vh;
-    width: 92%;
+    min-height: 77.2vh;
+    height: auto;
+     /*77.2vh*/
+    width: 100%;
     background-color: white;
     display: inline-block;
     background-size: cover;
@@ -332,4 +346,22 @@ input.cancelar
 input.cancelar:hover
 {
   background-color: #C53A3A;
+}
+input[type=button].modi
+{
+  border-radius: 4px;
+  border: none;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	height: 40px;
+	width: 120px;
+  background-color: #008CBA;
+}
+input[type=button].elim
+{
+	background-color: #f44336;
 }
