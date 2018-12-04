@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('../modelo/inventario.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -167,7 +168,6 @@
                             <option value="1">Sucursales ...</option>
                             <?php
                             
-                                require_once('../modelo/sucursales.php');
                                 $res = get_sucursales();
                             
                                 if($res){
@@ -185,7 +185,6 @@
                             <option value="1">Categorias ...</option>
                                <?php
 
-                                    require_once('../modelo/categorias.php');
                                     $res = get_categorias();
 
                                     if($res){
@@ -232,7 +231,6 @@
                                <th>Acciones</th>
                            </tr>
                         <?php
-                            require_once('../modelo/inventario.php');
                             $res = get_productosAlm();
                         
                             if($res){

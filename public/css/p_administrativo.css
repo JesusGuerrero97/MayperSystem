@@ -131,3 +131,34 @@ table.regis_produc
    background-color: #52D3BA;
    color:white;
 }
+
+
+/* vista pager */
+
+.pager{
+    width: 100%;
+    height: 5vh;
+    position: absolute;
+    bottom: 3.8%;
+}
+.pager ul{
+    width: 100%;
+    height: 5vh;    
+    margin-top: 0.2%;
+    text-align: center;
+}
+.pager ul li{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0;
+    color: #000;
+    border: 1px #CCC solid;
+    text-align: center;
+}
+.pager ul li a{
+    vertical-align: bottom;
+}
+.page-active{
+    background-color: #CCC;
+}

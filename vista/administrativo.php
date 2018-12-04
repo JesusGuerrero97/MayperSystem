@@ -90,7 +90,7 @@
                 <section class="container-filters">
                     <div class="cf-left">
                         <p>Mostrar 
-                            <select name="">
+                            <select id="select_registros">
                                 <option value="10">10</option>
                                 <option value="15">15</option>
                             </select>
@@ -104,7 +104,7 @@
                                 <option value="2">Demo</option>
                             </select>
                             
-                            <select>
+                            <select id="select_status">
                                 <option value="1">En espera</option>
                                 <option value="2">Aceptado</option>
                                 <option value="3">Rechazado</option>
@@ -113,16 +113,15 @@
                     </div>
                     <div class="cf-right">
                         <p>Buscar
-                            <input type="text" name="Buscar" id="buscarVenta" placeholder="(ej.Fecha,Clientes,Empleados,Estatus)">
+                            <input type="text" name="Buscar" id="buscar" placeholder="(ej.Fecha,Clientes,Empleados,Estatus)">
                             <img class="find" src="../public/img/find.png" alt="">
                         </p>
                     </div>
                 </section>
                 
-                <section id="tablaVentas" class="container-table tabla tablaVentas tablaDemos">
-               
-                    
+                <section id="tabla">
                 </section>
+                
             </div>
             
 <!--            CONTENEDOR 2-->
@@ -132,28 +131,97 @@
             </div>
         </div>
   </body>
-    <script src="../Public/js/modal.js"></script>
+<!--    <script src="../Public/js/modal.js"></script>-->
     <script src="../Public/js/p_tabs_menus.js"></script>
-    <script type="text/javascript" src="../public/js/jquery.js"></script>
-<!--    <script src="../public/js/busquedas.js"></script>-->
+    <script src="../public/js/funciones_tablas.js"></script>
+    <script src="../public/js/jquery.js"></script>
     
-    <script type="text/javascript">
-        
-    window.onload = obtener_ventas(null,2, "#tablaVentas","#buscarVenta");
-        
-        var select_tipo = document.getElementById('select_tipo');
-        select_tipo.addEventListener('change', (e)=>{
-           
-           switch(select_tipo.options[select_tipo.selectedIndex].text){
-                   
-                case "Venta":
-                   obtener_ventas(null,2, "#tablaVentas","#buscarVenta");
-                   break;
-               case "Demo":
-                   obtener_demos(null,3, "#tablaVentas","#buscarVenta");
-                   break;
-           }
-        });
+    <script type="text/javascript"> 
 
+        var s_t = document.getElementById('select_tipo');
+        var s_s = document.getElementById('select_status');
+        var s_r = document.getElementById('select_registros');
+        var btn_search = document.getElementById('buscar');
+        let pager = document.getElementById('pager');
+        let page = document.getElementById('page-active');
+
+        let tipo = "";
+        let status = "";
+        let nre = s_r.options[s_r.selectedIndex].text;
+        let npage =0;//= (page.firstChild.text)-1;
+
+        window.onload = function(){
+            
+            tipo = s_t.options[s_t.selectedIndex].text;
+            status = s_s.options[s_s.selectedIndex].text;
+
+            get_solicitudes(null, nre, npage, tipo, status);
+
+        }
+        
+        s_t.addEventListener('change', (e)=>{
+            tipo = s_t.options[s_t.selectedIndex].text;
+            btn_search.value = "";
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        s_s.addEventListener('change', (e)=>{
+            status = s_s.options[s_s.selectedIndex].text;
+            btn_search.value = "";
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        s_s.addEventListener('change', (e)=>{
+            status = s_s.options[s_s.selectedIndex].text;
+            btn_search.value = "";
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        s_r.addEventListener('change', (e)=>{
+            nre = s_r.options[s_r.selectedIndex].text;
+            btn_search.value = "";
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        btn_search.addEventListener('keyup', (e)=>{
+            var busqueda = btn_search.value;
+                
+            get_solicitudes(busqueda, nre, npage, tipo, status);
+        
+            
+        });
+        
+        
+        pager.addEventListener('click', (e)=>{
+           
+            if(e.target.classList.contains('page')){
+                
+                change_pager(e.target);
+                
+            }else if(e.target.parentElement.classList.contains('page')){
+                
+                change_pager(e.target.parentElement);
+            }
+            
+        });
+        
+        function change_pager(target){
+            let pages = Array.prototype.slice.apply(document.querySelectorAll('.page'));
+            
+            let i = pages.indexOf(target);
+            
+            pages.map(pag => pag.classList.remove('page-active'));
+            pages[i].classList.add("page-active");
+            
+            
+            btn_search.value = "";
+            npage = (target.firstChild.text)-1;
+            get_solicitudes(null, nre, npage, tipo, status);
+            
+        }
     </script>
 </html>
