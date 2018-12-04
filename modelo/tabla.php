@@ -90,7 +90,7 @@ include('conexion.php');
           {
             $tabla.="No se encontraron coincidencias con sus criterios de búsqueda.";
           }
-            require_once('productos.php');
+            require_once('../controlador/config.php');
             echo $tabla.= set_pager($buscarDemos->num_rows, $nreg);
         }
         
