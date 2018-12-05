@@ -166,8 +166,7 @@
                     <div class="content_p_top">
                         <p>Almacen*</p>
                         <p>Categoria*</p>
-                        <select name="almacen" class="select">
-                            <option value="1">Sucursales ...</option>
+                        <select name="almacen" class="select" id="select_sucursal">
                             <?php
                             
                                 $res = get_sucursales();
@@ -183,8 +182,7 @@
                             ?>
                         </select>
 
-                        <select name="categoria" class="select">
-                            <option value="1">Categorias ...</option>
+                        <select name="categoria" class="select" id="select_categoria">
                                <?php
 
                                     $res = get_categorias();
@@ -205,10 +203,9 @@
                         <div class="content_p_filters_left">
                             <p>
                                 <b>Mostrar</b>
-                                <select name="" id="">
+                                <select name="" id="select_registros">
                                     <option value="10">10</option>
                                     <option value="15">15</option>
-                                    <option value="20">20</option>
                                 </select>
                                 <b>registros</b>
                             </p>
@@ -216,39 +213,16 @@
                         <div class="content_p_filters_right">
                             <p>
                                 <b>Buscar: </b>
-                                <input type="text" name="input_search">
+                                <input type="text" name="Buscar" id="buscar" placeholder="(ej.Fecha,Clientes,Empleados,Estatus)">
                             </p>
                             
                         </div>
                     </div>
+                    <section id="tabla">
+                    </section>
+<!--
                     
-                    <div class="table_products" id="table_products">
-                       
-                       <table id="table">
-                           <tr>
-                               <th>Sucursal</th>
-                               <th>Producto</th>
-                               <th>Clave</th>
-                               <th>Serie</th>
-                               <th>Acciones</th>
-                           </tr>
-                        <?php
-                            $res = get_productosAlm();
-                        
-                            if($res){
-                                while($row = mysqli_fetch_array($res)){
-                                    echo "<tr class='row_container'>";
-                                        echo "<td class='row_product'>".utf8_encode($row['Nombre_sucursal'])."</td>";
-                                        echo "<td class='row_product'>".utf8_encode($row['Modelo'])."</td>";
-                                        echo "<td class='row_product'>".utf8_encode($row['Clave'])."</td>";
-                                        echo "<td class='row_product'>".utf8_encode($row['Serie'])."</td>";
-                                        echo "<td class='row_product'><button class='btn_table'>Agregar</button></td>";
-                                    echo "</tr>";
-                                }
-                            }
-                        ?>
-                        </table>
-                    </div>
+-->
                 </section>
             </div>
         </div>
@@ -333,8 +307,65 @@
         </div>
     </div>
   </body>
-  <script src="../public/js/modal.js"></script>
+<!--  <script src="../public/js/modal.js"></script>-->
   <script src="../public/js/p_tabs_menus.js"></script>
   <script src="../public/js/add_products.js"></script>
+  
+    <script src="../public/js/funciones_tablas.js"></script>
+    <script src="../public/js/jquery.js"></script>
+    
+    <script type="text/javascript"> 
+        
+        let s_s=document.getElementById('select_sucursal');
+        let s_c=document.getElementById('select_categoria');
+        let s_r=document.getElementById('select_registros');
+        let key = document.getElementById('buscar');
+        
+        var sucursal = "";
+        var categoria = "";
+        var nreg = "";
+        var npage = 0;
+        
+        window.onload = function(){
+
+            nreg = s_r.options[s_r.selectedIndex].text;
+            sucursal = s_s.options[s_s.selectedIndex].text;
+            categoria = s_c.options[s_c.selectedIndex].text;
+            
+            get_productosAlm("null", nreg, npage, sucursal, categoria);
+
+        }
+        
+        key.addEventListener('keyup', (e)=>{
+           
+            get_productosAlm(key.value, nreg, npage, sucursal, categoria);
+            
+        });
+        
+        s_r.addEventListener('change', (e)=>{
+            
+            nreg = s_r.options[s_r.selectedIndex].text;
+            get_productosAlm("null", nreg, npage, sucursal, categoria);
+            
+        })
+        
+        s_s.addEventListener('change', (e)=>{
+            
+            sucursale = s_s.options[s_s.selectedIndex].text;
+            get_productosAlm(key.value, nreg, npage, sucursal, categoria);
+            
+        })
+        
+        s_c.addEventListener('change', (e)=>{
+            
+            categoria = s_c.options[s_c.selectedIndex].text;
+            get_productosAlm(key.value, nreg, npage, sucursal, categoria);
+            
+        })
+        
+        
+        
+        
+    </script>
 
 </html>

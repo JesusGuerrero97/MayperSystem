@@ -33,3 +33,22 @@ function get_pager(nreg){
         $("#pager").html(resultado);
     }) 
 }
+
+function get_productosAlm(busqueda, nr, np, suc, cat){
+    $.ajax({
+    url: '../modelo/tabla.php',
+    type: 'POST',
+    dataType: 'html',
+    data:{
+        
+        function: "get_productosAlm",
+        busqueda: busqueda,
+        nregistros: nr,
+        npages: np,
+        categoria: cat,
+        suc: suc
+    },
+    }).done(function(resultado){
+        $("#tabla").html(resultado);
+    })
+}

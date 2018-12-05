@@ -3,8 +3,9 @@
 include('conexion.php');
 
 
-    if(isset($_POST['function']) && isset($_POST['busqueda']) && isset($_POST['nregistros']) && isset($_POST['npages']) && isset($_POST['tipo']) && isset($_POST['status'])){
+    if(isset($_POST['function']) && isset($_POST['busqueda']) && isset($_POST['nregistros'])){
         
+    
         if($_POST['busqueda'] ==""){
             $busqueda = "null";
         }else{
@@ -16,6 +17,11 @@ include('conexion.php');
             case "cargar_solicitudes":
                 
                 cargar_solicitudes($busqueda, $_POST['nregistros'], $_POST['npages'], $_POST['tipo'], $_POST['status']);
+                break;
+                
+            case "get_productosAlm":
+                
+                get_productosAlm($busqueda, $_POST['suc'], $_POST['categoria'], $_POST['nregistros'], $_POST['npages']);
                 break;
         }
     }else{
@@ -95,6 +101,73 @@ include('conexion.php');
           }
             require_once('../controlador/config.php');
             echo $tabla.= set_pager($rows, $nreg);
+        }
+
+        function get_productosAlm($busqueda, $sucursal, $cat, $nreg, $npages)
+        {
+            $table = "";
+            if($busqueda == 'null')
+                $busqueda = "";
+            
+          $con = conectar();
+          $query="select sucursales.Nombre_sucursal,productos.Serie,productos.Modelo,productos.Clave,categorias.Nombre_categorias, status.Nombre_status FROM productos 
+          INNER JOIN categorias ON productos.Id_categoria=categorias.Id_categoria
+          INNER JOIN STATUS ON status.Id_status= productos.Id_status 
+          INNER JOIN sucursales ON sucursales.Id_sucursal = productos.Id_sucursal 
+          WHERE sucursales.Nombre_sucursal ='$sucursal'
+          AND categorias.Nombre_categorias = '$cat'
+          AND CONCAT(productos.Serie, ' ', productos.Modelo, ' ', productos.Clave) LIKE '%$busqueda%'";
+          
+            
+            
+            $result = $con->query($query);
+            
+            $rows = $result->num_rows;
+            
+            $result = $con->query($query.="LIMIT $nreg OFFSET $npages");
+            
+            
+            
+//            echo $query;
+            if($result){
+                
+                $table.="<div class='table_products' id='table_products'>";
+                       
+                       $table.="<table id='table'>";
+                           $table.="<tr>";
+                               $table.="<th>Sucursal</th>";
+                               $table.="<th>Producto</th>";
+                               $table.="<th>Clave</th>";
+                               $table.="<th>Serie</th>";
+                               $table.="<th>Acciones</th>";
+                           $table.="</tr>";
+                        
+                            echo "<p>$rows</p>";
+                            echo $query;
+                
+                
+                            while($row = mysqli_fetch_array($result)){
+                                $table.="<tr class='row_container'>";
+                                    $table.="<td class='row_product'>".utf8_encode($row['Nombre_sucursal'])."</td>";
+                                    $table.="<td class='row_product'>".utf8_encode($row['Modelo'])."</td>";
+                                    $table.="<td class='row_product'>".utf8_encode($row['Clave'])."</td>";
+                                    $table.="<td class='row_product'>".utf8_encode($row['Serie'])."</td>";
+                                    $table.="<td class='row_product'><button class='btn_table'>Agregar</button></td>";
+                                $table.="</tr>";
+                            }
+                            
+                        
+                        $table.="</table>";
+                    $table.="</div>";
+                
+            }else{
+                echo "Error en la consulta";
+            }
+            
+            require_once('../controlador/config.php');
+            echo $table.= set_pager($rows, $nreg);
+            
+
         }
         
         
