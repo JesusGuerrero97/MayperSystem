@@ -18,7 +18,7 @@
         if($buscarProductos->num_rows > 0)
           {
              $tabla.=
-             '<table class="regis_produc">
+             '<table class="regis_produc" id="tabla_delete">
                 <tr>
                     <th>Producto</th>
                     <th>Clave</th>
@@ -35,7 +35,8 @@
                         <td>'.$filaProductos["Nombre_categorias"].'</td>
                         <td>'.$filaProductos["Nombre_status"].'</td>
                         <td> <input type="button" class="modi"  value="Modificar"></td>
-                        <td><input type="button" onclick="<script type="text/javascript"><?php require_once("../modelo/inventario.php"); delete_productos($filaProductos["Id_productos"]);?></script>" class="modi elim" value="Eliminar"></td>
+                        <td><input id="delete" type="button" class="modi elim" value="Eliminar"></td>
+                        <input type="hidden" id="valor" value='.$filaProductos['Id_productos'].'>
                     </tr>';
                 }
                 $tabla.='</table>';

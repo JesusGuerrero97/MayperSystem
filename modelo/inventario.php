@@ -63,18 +63,4 @@
       return null;
     }
   }
-  function delete_productos($Id_productos)
-  {
-    $con = conectar();
-    if($con)
-    {
-      if($con->query("delete from productos WHERE Id_productos=".$Id_productos.";"))
-      {
-        return true;
-      }
-      else {
-        return false;
-      }
-    }
-  }
  ?>

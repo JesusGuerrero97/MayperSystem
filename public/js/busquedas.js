@@ -8,13 +8,9 @@ $(document).ready(function(){
       });
       $("#demos").on('click',function(){
         obtener_demos(null,3);
-  });
+      });
 
 });
-function hola(id)
-{
-  alert(id);
-}
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////FUNCION PARA BUSCAR PRODUCTOS EN CONJUNTO CON PHP////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -34,7 +30,6 @@ function hola(id)
       .done(function(resultado)
       {
         $(".tabla").html(resultado);
-        //$(".tabla").html(resultado);
       })
     }
     $(document).on('keyup','.busqueda',function()

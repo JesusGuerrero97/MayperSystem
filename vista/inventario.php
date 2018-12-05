@@ -247,4 +247,5 @@
   <script type="text/javascript" src="../public/js/jquery.js"></script>
   <script src="../public/js/busquedas.js"></script>
   <script type="text/javascript" src="../public/js/addproduct_modal.js"></script>
+  <script type="text/javascript" src="../public/js/delete_product.js"></script>
 </html>
