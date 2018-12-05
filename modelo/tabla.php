@@ -57,10 +57,11 @@ include('conexion.php');
             
           $buscarDemos=$con->query($consulta);
             
-//            echo "<p>$consulta</p>";
             $rows = $buscarDemos->num_rows;
         
             $buscarDemos = $con->query($consulta.="LIMIT $nreg OFFSET $npages");
+            
+//            echo "<p>$consulta</p>";
             
           if($buscarDemos->num_rows > 0)
           {
@@ -100,7 +101,7 @@ include('conexion.php');
             $tabla.="No se encontraron coincidencias con sus criterios de búsqueda.";
           }
             require_once('../controlador/config.php');
-            echo $tabla.= set_pager($rows, $nreg);
+            echo $tabla.= set_pager($rows, $nreg, $npages);
         }
 
         function get_productosAlm($busqueda, $sucursal, $cat, $nreg, $npages)
@@ -165,7 +166,7 @@ include('conexion.php');
             }
             
             require_once('../controlador/config.php');
-            echo $table.= set_pager($rows, $nreg);
+            echo $table.= set_pager($rows, $nreg, $npages);
             
 
         }

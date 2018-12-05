@@ -46,6 +46,7 @@
         </div>
        
     </div>
+<!--
     <div id="noti">
       <div class="cont">
         <div class="notification-pane" id="mynotification">
@@ -54,7 +55,7 @@
            </figure>
        </div>
        <div id="myModal" class="modal">
-         <!-- Modal content -->
+          Modal content 
          <div class="modal-content">
            <div class="modal-header">
              <span class="close">&times;</span>
@@ -71,11 +72,10 @@
                <img class="notification_image" src="../Public/img/exit.png" alt="">
           </figure>
       </div>
-        <!--<div class="ot">
-          Notificaciones
-        </div>-->
+ 
       </div>
     </div>
+-->
         <div class="container">
         
 <!--           CONTENEDOR 1-->
@@ -91,6 +91,7 @@
                     <div class="cf-left">
                         <p>Mostrar 
                             <select id="select_registros">
+                               <option value="10">5</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>
                             </select>
@@ -136,92 +137,5 @@
     <script src="../public/js/funciones_tablas.js"></script>
     <script src="../public/js/jquery.js"></script>
     
-    <script type="text/javascript"> 
-
-        var s_t = document.getElementById('select_tipo');
-        var s_s = document.getElementById('select_status');
-        var s_r = document.getElementById('select_registros');
-        var btn_search = document.getElementById('buscar');
-        let pager = document.getElementById('pager');
-        let page = document.getElementById('page-active');
-
-        let tipo = "";
-        let status = "";
-        let nre = s_r.options[s_r.selectedIndex].text;
-        let npage =0;//= (page.firstChild.text)-1;
-
-        window.onload = function(){
-            
-            tipo = s_t.options[s_t.selectedIndex].text;
-            status = s_s.options[s_s.selectedIndex].text;
-
-            get_solicitudes(null, nre, npage, tipo, status);
-
-        }
-        
-        s_t.addEventListener('change', (e)=>{
-            tipo = s_t.options[s_t.selectedIndex].text;
-            btn_search.value = "";
-            
-            get_solicitudes(null, nre, npage, tipo, status);
-        })
-        
-        s_s.addEventListener('change', (e)=>{
-            status = s_s.options[s_s.selectedIndex].text;
-            btn_search.value = "";
-            
-            get_solicitudes(null, nre, npage, tipo, status);
-        })
-        
-        s_s.addEventListener('change', (e)=>{
-            status = s_s.options[s_s.selectedIndex].text;
-            btn_search.value = "";
-            
-            get_solicitudes(null, nre, npage, tipo, status);
-        })
-        
-        s_r.addEventListener('change', (e)=>{
-            nre = s_r.options[s_r.selectedIndex].text;
-            btn_search.value = "";
-            
-            get_solicitudes(null, nre, npage, tipo, status);
-        })
-        
-        btn_search.addEventListener('keyup', (e)=>{
-            var busqueda = btn_search.value;
-                
-            get_solicitudes(busqueda, nre, npage, tipo, status);
-        
-            
-        });
-        
-        
-        pager.addEventListener('click', (e)=>{
-           
-            if(e.target.classList.contains('page')){
-                
-                change_pager(e.target);
-                
-            }else if(e.target.parentElement.classList.contains('page')){
-                
-                change_pager(e.target.parentElement);
-            }
-            
-        });
-        
-        function change_pager(target){
-            let pages = Array.prototype.slice.apply(document.querySelectorAll('.page'));
-            
-            let i = pages.indexOf(target);
-            
-            pages.map(pag => pag.classList.remove('page-active'));
-            pages[i].classList.add("page-active");
-            
-            
-            btn_search.value = "";
-            npage = (target.firstChild.text)-1;
-            get_solicitudes(null, nre, npage, tipo, status);
-            
-        }
-    </script>
+    <script src="../public/js/pager.js"></script>
 </html>

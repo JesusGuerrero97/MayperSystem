@@ -15,6 +15,7 @@ function get_solicitudes(busqueda, nr, np, tipo, status){
     },
     }).done(function(resultado){
         $("#tabla").html(resultado);
+        pager("cargar_solicitudes");
     })
 }
 
@@ -32,6 +33,7 @@ function get_pager(nreg){
     }).done(function(resultado){
         $("#pager").html(resultado);
     }) 
+
 }
 
 function get_productosAlm(busqueda, nr, np, suc, cat){
@@ -51,4 +53,7 @@ function get_productosAlm(busqueda, nr, np, suc, cat){
     }).done(function(resultado){
         $("#tabla").html(resultado);
     })
+    
+    
 }
+        
