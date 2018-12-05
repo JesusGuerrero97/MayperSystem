@@ -34,8 +34,8 @@
                         <td>'.$filaProductos["Clave"].'</td>
                         <td>'.$filaProductos["Nombre_categorias"].'</td>
                         <td>'.$filaProductos["Nombre_status"].'</td>
-                        <td> <input type="button" class="modi" value="Modificar"></td>
-                        <td><input type="button" class="modi elim" value="Eliminar"></td>
+                        <td> <input type="button" class="modi"  value="Modificar"></td>
+                        <td><input type="button" onclick="<script type="text/javascript"><?php require_once("../modelo/inventario.php"); delete_productos($filaProductos["Id_productos"]);?></script>" class="modi elim" value="Eliminar"></td>
                     </tr>';
                 }
                 $tabla.='</table>';

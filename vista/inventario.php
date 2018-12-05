@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('../modelo/inventario.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@
     <style type="text/css">
         .image-profile{
             background-image: url('<?php echo $_SESSION['user']['userFoto']; ?>');
+            margin-top: 10%;
         }
     </style>
     <link rel="stylesheet" href="../public/css/inventario.css">
@@ -37,17 +39,21 @@
                     ?>
                 </figcaption>
             </figure>
+            <div class="notification-pane" id="mynotification" title="Notificación">
+               <figure>
+                    <img class="notification_image" src="../Public/img/notification_icon.png" alt="notificacion">
+               </figure>
+           </div>
+           <div class="exit" onclick="document.location = '../controlador/logout.php';" title="Cerrar Sesion">
+              <figure>
+                   <img class="notification_image" src="../Public/img/exit.png" alt="Cerrar sesión">
+              </figure>
+          </div>
         </div>
     </div>
   <div class="father">
-    <!--<div id="noti">
-        <div class="notification-pane" id="mynotification">
-           <figure>
-                <img class="notification_image" src="../Public/img/notification_icon.png" alt="notificacion" title="Notificación">
-           </figure>
-       </div>
        <div id="myModal" class="modal">
-         <!-- Modal content
+         <!-- Modal content-->
          <div class="modal-content">
            <div class="modal-header">
              <span class="close">&times;</span>
@@ -59,12 +65,7 @@
            </div>
          </div>
        </div>
-       <div class="exit" onclick="document.location = '../controlador/logout.php';">
-          <figure>
-               <img class="notification_image" src="../Public/img/exit.png" alt="Cerrar sesión" title="Cerrar Sesion">
-          </figure>
-      </div>
-    </div>-->
+    </div>
       <div class="container">
           <div class="content content-active">
             <div class="inv">
@@ -91,7 +92,7 @@
                           <textarea class="txt1" rows="4" cols="40" name="Software" placeholder="Software"></textarea>
                           <textarea class="txt2" rows="4" cols="40" name="Accesorios" placeholder="Accesorios"></textarea>
                           <?php
-                            require_once('../modelo/inventario.php');
+
                             $categorias = get_categorias();
                             $proveedores = get_proveedores();
                             $estatus = get_estatus();
