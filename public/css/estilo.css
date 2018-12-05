@@ -374,4 +374,13 @@ input[type=button].elim
 input[type=button].elim:hover
 {
   background-color: #B93D33;
+  color: #000;
+}
+input[type=button].succes
+{
+  background-color: #4CAF50;
+}
+input[type=button].succes:hover
+{
+  background-color: #4B9A4D;
 }

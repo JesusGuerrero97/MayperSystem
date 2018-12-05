@@ -1,6 +1,4 @@
- $(document).ready(function(){
 
-});
 function borrar(idProducto)
 {
   $.ajax({
@@ -22,7 +20,6 @@ function borrar(idProducto)
 $(document).on('click','#delete',function(e){
 
    valorid = e.target.parentNode.parentNode.lastElementChild.value;
-   alert(valorid);
    if(confirm("¿Desea eliminar este producto?"))
    {
      borrar(valorid);

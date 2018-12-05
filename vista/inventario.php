@@ -73,7 +73,7 @@
             </div>
             <div class="db">
               <p class="tp">Configuración de Productos</p>
-              <div><input  id="add" type="button" class="add" name="" value="+ Productos"></div>
+              <div><input  id="addprd" type="button" class="add addprd" name="" value="+ Productos"></div>
               <!-- Modal agregar productos -->
               <div id="ModAdd" class="modal">
                 <!-- Modal content -->
@@ -92,7 +92,6 @@
                           <textarea class="txt1" rows="4" cols="40" name="Software" placeholder="Software"></textarea>
                           <textarea class="txt2" rows="4" cols="40" name="Accesorios" placeholder="Accesorios"></textarea>
                           <?php
-
                             $categorias = get_categorias();
                             $proveedores = get_proveedores();
                             $estatus = get_estatus();

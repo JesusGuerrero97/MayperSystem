@@ -2,11 +2,12 @@
 var modalAdd= document.getElementById('ModAdd');
 
 // Get the button that opens the modal
-var add = document.getElementById('add');
+var add = document.getElementById('addprd');
 
 // Get the <span> element that closes the modal
 var spanadd = document.getElementsByClassName("closeadd")[0];
 
+//habilitar el modal
 add.addEventListener('click',function(){
   modalAdd.style.display= "block";
 });
