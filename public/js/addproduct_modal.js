@@ -7,6 +7,8 @@ var add = document.getElementById('addprd');
 // Get the <span> element that closes the modal
 var spanadd = document.getElementsByClassName("closeadd")[0];
 
+// var canc = document.getElementById('cancelar');
+
 //habilitar el modal
 add.addEventListener('click',function(){
   modalAdd.style.display= "block";
@@ -17,6 +19,7 @@ spanadd.onclick = function()
 {
   modalAdd.style.display = "none";
 }
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event)

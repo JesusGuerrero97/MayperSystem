@@ -17,7 +17,6 @@
     function set_product($Serie,$Clave,$Marca,$Modelo,$Software,$Accesorios,$Id_categoria,$Id_proveedor,$Id_status,$Id_sucursal)
     {
       $con = conectar();
-
       $query = "insert into productos(Id_productos,Serie,Clave,Marca,Modelo,Software,Accesorios,Id_categoria,Id_proveedor,Id_status,Id_sucursal) VALUES(NULL,'$Serie','$Clave','$Marca','$Modelo','$Software','$Accesorios',$Id_categoria,$Id_proveedor,$Id_status,$Id_sucursal);";
       if($con)
       {
@@ -38,10 +37,7 @@
       {
         if($con->query('delete from productos WHERE Id_productos='.$_POST["id"].';'))
         {
-          return true;
-        }
-        else {
-          return false;
+          echo "se elimino";
         }
       }
     }

@@ -123,6 +123,7 @@
                           </select>
                           <input class="agregar" type="submit" value="Agregar">
                           <input class="cancelar" type="button" value="Cancelar">
+                          <input type="hidden" name="opcion" value="Aceptar">
                         </form>
                     </div>
                   </div>

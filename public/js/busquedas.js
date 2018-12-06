@@ -34,9 +34,7 @@ $(document).ready(function(){
              if(e.target.parentNode.lastElementChild.value=="Modificar")
              {
                 valorid = e.target.parentNode.parentNode.lastElementChild.value;
-
                 buscar_datos_registro(valorid,3);
-              //
              }
           })
       })
@@ -151,20 +149,20 @@ $(document).ready(function(){
               opc: opc
             },
           })
-          .done(function(resultado){
-            if(resultado)
+          .done(function(json){
+            if(json)
             {
               modalAdd.style.display="block";
-              document.getElementsByName('Serie')[0].value=resultado.Serie;
-              document.getElementsByName('Clave')[0].value=resultado.Clave;
-              document.getElementsByName('Marca')[0].value=resultado.Marca;
-              document.getElementsByName('Modelo')[0].value=resultado.Modelo;
-              document.getElementsByName('Software')[0].value=resultado.Software;
-              document.getElementsByName('Accesorios')[0].value=resultado.Accesorios;
-              document.getElementsByName('Id_categoria')[0].selectedIndex=resultado.Id_categoria;
-              document.getElementsByName('Id_proveedor')[0].selectedIndex=resultado.Id_proveedor;
-              document.getElementsByName('Id_status')[0].selectedIndex=resultado.Id_status;
-              document.getElementsByName('Id_sucursal')[0].selectedIndex=resultado.Id_status;
+              document.getElementsByName('Serie')[0].value=json.Serie;
+              document.getElementsByName('Clave')[0].value=json.Clave;
+              document.getElementsByName('Marca')[0].value=json.Marca;
+              document.getElementsByName('Modelo')[0].value=json.Modelo;
+              document.getElementsByName('Software')[0].value=json.Software;
+              document.getElementsByName('Accesorios')[0].value=json.Accesorios;
+              document.getElementsByName('Id_categoria')[0].selectedIndex=json.Id_categoria;
+              document.getElementsByName('Id_proveedor')[0].selectedIndex=json.Id_proveedor;
+              document.getElementsByName('Id_status')[0].selectedIndex=json.Id_status;
+              document.getElementsByName('Id_sucursal')[0].selectedIndex=json.Id_status;
               document.getElementsByClassName('agregar')[0].value="Editar";
             }
           })
