@@ -17,6 +17,23 @@ session_start();
     
   </head>
   <body>
+   
+       <?php
+
+        if(!isset($_SESSION['user'])){
+            echo'<script type="text/javascript">
+                    alert("Inicie sesión para continar");
+                    window.location.href="login.php";
+                </script>';
+            
+        }else if(!($_SESSION['user']['userTipo'] == "Directivo" || $_SESSION['user']['userTipo'] == "Administrador" || $_SESSION['user']['userTipo'] == "Aplicacionista")){
+//           
+            $loc = "?target=".$_SESSION['user']['userTipo'];
+            header("Location: ../controlador/redirect_user.php".$loc);
+        
+        }
+    ?>
+   
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
       <div class="in ce tab-active"><img class="logo" src="../Public/img/Confirmacion.png" alt=""><p class="vi">Confirmaciones</p></div>

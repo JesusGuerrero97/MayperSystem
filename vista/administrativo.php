@@ -20,6 +20,23 @@
     
   </head>
   <body>
+   
+      <?php
+
+        if(!isset($_SESSION['user'])){
+            echo'<script type="text/javascript">
+                    alert("Inicie sesión para continar");
+                    window.location.href="login.php";
+                </script>';
+            
+        }else if(!($_SESSION['user']['userTipo'] == "Directivo" || $_SESSION['user']['userTipo'] == "Administrador" || $_SESSION['user']['userTipo'] == "Administrativo")){
+//           
+            $loc = "?target=".$_SESSION['user']['userTipo'];
+            header("Location: ../controlador/redirect_user.php".$loc);
+        
+        }
+    ?>
+   
     <div id="sechead">
       <div class="logoPrincipal"><img width="250px" height="auto" src="../public/img/logo.png" alt="logo Mayper"></div>
       
@@ -130,8 +147,16 @@
 <!--            CONTENEDOR 2-->
             
             <div class="content">
-                
+                <div class="inv">
+                  <p class="t">Inventario Principal <span class="t2">Mayper Medical</span></p>
+                </div>
+                <div class="db">
+                  <p class="tp">Configuración de Productos</p>
+                  <div><input  id="addprd" type="button" class="add addprd" name="" value="+ Productos"></div>
+                </div>
             </div>
+            
+            
         </div>
   </body>
 <!--    <script src="../Public/js/modal.js"></script>-->
