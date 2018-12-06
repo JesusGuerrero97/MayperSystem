@@ -1,12 +1,13 @@
 
-function borrar(idProducto)
+function borrar(idProducto,opc)
 {
   $.ajax({
-    url: '../modelo/deleteProduct.php',
+    url: '../modelo/productos.php',
     type: 'POST',
     dataType: 'html',
     data:{
-      id:idProducto
+      id:idProducto,
+      opc: opc
     },
   })
   .done(function(resultado)
@@ -22,7 +23,7 @@ $(document).on('click','#delete',function(e){
    valorid = e.target.parentNode.parentNode.lastElementChild.value;
    if(confirm("¿Desea eliminar este producto?"))
    {
-     borrar(valorid);
+     borrar(valorid,2);
    }
 
 });

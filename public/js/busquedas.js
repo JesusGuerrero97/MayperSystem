@@ -30,6 +30,15 @@ $(document).ready(function(){
       .done(function(resultado)
       {
         $(".tabla").html(resultado);
+          $(document).on('click',function(e){
+             if(e.target.parentNode.lastElementChild.value=="Modificar")
+             {
+                valorid = e.target.parentNode.parentNode.lastElementChild.value;
+
+                buscar_datos_registro(valorid,3);
+              //
+             }
+          })
       })
     }
     $(document).on('keyup','.busqueda',function()
@@ -107,4 +116,56 @@ $(document).ready(function(){
          {
             obtener_demos(null,3);
          }
-       });
+      });
+      /*//////////////////////////////////////////////////////////////////
+    ///////////////////////////funcion para modificar///////////////////////////
+    //////////////////////////////////////////////////////////////////*/
+      // function modificar_producto(idProducto,opc)
+      // {
+      //   $.ajax({
+      //         url: '../modelo/productos.php',
+      //         type: 'POST',
+      //         dataType: 'html',
+      //         data:{
+      //           id:idProducto,
+      //           opc: opc
+      //         },
+      //       })
+      //       .done(function(resultado)
+      //       {
+      //         if(resultado)
+      //         {
+      //           obtener_productos(null,1);
+      //         }
+      //       })
+      //   }
+      //
+        function buscar_datos_registro(idProducto,opc){
+
+          $.ajax({
+            url: '../modelo/productos.php',
+            type: 'POST',
+            dataType: 'json',
+            data:{
+              id:idProducto,
+              opc: opc
+            },
+          })
+          .done(function(resultado){
+            if(resultado)
+            {
+              modalAdd.style.display="block";
+              document.getElementsByName('Serie')[0].value=resultado.Serie;
+              document.getElementsByName('Clave')[0].value=resultado.Clave;
+              document.getElementsByName('Marca')[0].value=resultado.Marca;
+              document.getElementsByName('Modelo')[0].value=resultado.Modelo;
+              document.getElementsByName('Software')[0].value=resultado.Software;
+              document.getElementsByName('Accesorios')[0].value=resultado.Accesorios;
+              document.getElementsByName('Id_categoria')[0].selectedIndex=resultado.Id_categoria;
+              document.getElementsByName('Id_proveedor')[0].selectedIndex=resultado.Id_proveedor;
+              document.getElementsByName('Id_status')[0].selectedIndex=resultado.Id_status;
+              document.getElementsByName('Id_sucursal')[0].selectedIndex=resultado.Id_status;
+              document.getElementsByClassName('agregar')[0].value="Editar";
+            }
+          })
+        }
