@@ -21,7 +21,15 @@ include('conexion.php');
                 
             case "get_productosAlm":
                 
-                get_productosAlm($busqueda, $_POST['suc'], $_POST['categoria'], $_POST['nregistros'], $_POST['npages']);
+                
+                if(!($_POST['prod'][0] == 'null')){
+                    $products = $_POST['prod'];
+                }else{
+                    $products = 'null';
+                }
+                
+                
+                get_productosAlm($busqueda, $_POST['suc'], $_POST['categoria'], $_POST['nregistros'], $_POST['npages'], $products);
                 break;
         }
     }else{
@@ -104,20 +112,22 @@ include('conexion.php');
             echo $tabla.= set_pager($rows, $nreg, $npages);
         }
 
-        function get_productosAlm($busqueda, $sucursal, $cat, $nreg, $npages)
+        function get_productosAlm($busqueda, $sucursal, $cat, $nreg, $npages, $products)
         {
+            
             $table = "";
             if($busqueda == 'null')
                 $busqueda = "";
             
           $con = conectar();
-          $query="select sucursales.Nombre_sucursal,productos.Serie,productos.Modelo,productos.Clave,categorias.Nombre_categorias, status.Nombre_status FROM productos 
+          $query="select sucursales.Nombre_sucursal,productos.Serie,productos.Id_productos, productos.Modelo,productos.Clave,categorias.Nombre_categorias, status.Nombre_status FROM productos 
           INNER JOIN categorias ON productos.Id_categoria=categorias.Id_categoria
           INNER JOIN STATUS ON status.Id_status= productos.Id_status 
           INNER JOIN sucursales ON sucursales.Id_sucursal = productos.Id_sucursal 
-          WHERE sucursales.Nombre_sucursal ='$sucursal'
-          AND categorias.Nombre_categorias = '$cat'
-          AND CONCAT(productos.Serie, ' ', productos.Modelo, ' ', productos.Clave) LIKE '%$busqueda%'";
+          WHERE sucursales.Nombre_sucursal ='".utf8_decode($sucursal)."'
+          AND categorias.Nombre_categorias = '".utf8_decode($cat)."'
+          AND CONCAT(productos.Serie, ' ', productos.Modelo, ' ', productos.Clave) LIKE '%$busqueda%' ";
+        
           
             
             
@@ -132,39 +142,74 @@ include('conexion.php');
 //            echo $query;
             if($result){
                 
-                $table.="<div class='table_products' id='table_products'>";
-                       
-                       $table.="<table id='table'>";
-                           $table.="<tr>";
-                               $table.="<th>Sucursal</th>";
-                               $table.="<th>Producto</th>";
-                               $table.="<th>Clave</th>";
-                               $table.="<th>Serie</th>";
-                               $table.="<th>Acciones</th>";
-                           $table.="</tr>";
-                        
-                            echo "<p>$rows</p>";
-                            echo $query;
-                
-                
-                            while($row = mysqli_fetch_array($result)){
-                                $table.="<tr class='row_container'>";
-                                    $table.="<td class='row_product'>".utf8_encode($row['Nombre_sucursal'])."</td>";
-                                    $table.="<td class='row_product'>".utf8_encode($row['Modelo'])."</td>";
-                                    $table.="<td class='row_product'>".utf8_encode($row['Clave'])."</td>";
-                                    $table.="<td class='row_product'>".utf8_encode($row['Serie'])."</td>";
-                                    $table.="<td class='row_product'><button class='btn_table'>Agregar</button></td>";
-                                $table.="</tr>";
-                            }
-                            
-                        
-                        $table.="</table>";
-                    $table.="</div>";
+                if($rows >0){
+                    
+                    $table.="<div class='table_products' id='table_products'>";
+
+                           $table.="<table id='table'>";
+                               $table.="<tr>";
+                                   $table.="<th>Sucursal</th>";
+                                   $table.="<th>Producto</th>";
+                                   $table.="<th>Clave</th>";
+                                   $table.="<th>Serie</th>";
+                                   $table.="<th>Acciones</th>";
+                               $table.="</tr>";
+
+//                                echo "<p>$rows</p>";
+//                                echo $query;
+
+
+                                while($row = mysqli_fetch_array($result)){
+                                    
+                                    $table.="<tr class='row_container'>";
+                                        $table.="<td class='row_product'>".utf8_encode($row['Nombre_sucursal'])."</td>";
+                                        $table.="<td class='row_product'>".utf8_encode($row['Modelo'])."</td>";
+                                        $table.="<td class='row_product'>".utf8_encode($row['Clave'])."</td>";
+                                        $table.="<td class='row_product'>".utf8_encode($row['Serie'])."</td>";
+                                    
+                                        
+                                    
+                                  
+                                        if(!($products=='null')){
+                                            $is_Printed = false;
+                                            
+
+                                            for($i = 0; $i<sizeof($products); $i++){
+                                                
+                                                if($products[$i] == $row['Id_productos']){
+                                                     
+                                                    $table.="<td class='row_product'><button class='btn_table checked'>Agregar</button></td>";   
+                                                    
+                                                    $is_Printed = true;
+                                                    break;
+                                                }
+                                            }
+                                            if(!$is_Printed){
+//                                                
+                                                $table.="<td class='row_product'><button class='btn_table'>Agregar</button></td>";
+                                            }
+                                        }else{
+                                    
+                                            $table.="<td class='row_product'><button class='btn_table'>Agregar</button></td>";
+                                        }
+                                    
+                                    $table.="<input type='hidden' value='".$row['Id_productos']."'>";
+                                    
+                                    $table.="</tr>";
+                                }
+
+
+                            $table.="</table>";
+                        $table.="</div>";
+                }else{
+                    $table.="No se encontraron coincidencias con sus criterios de búsqueda.";
+                }
                 
             }else{
                 echo "Error en la consulta";
             }
             
+            mysqli_free_result($result);
             require_once('../controlador/config.php');
             echo $table.= set_pager($rows, $nreg, $npages);
             

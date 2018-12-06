@@ -204,6 +204,7 @@
                             <p>
                                 <b>Mostrar</b>
                                 <select name="" id="select_registros">
+                                   <option value="5">5</option>
                                     <option value="10">10</option>
                                     <option value="15">15</option>
                                 </select>
@@ -313,7 +314,7 @@
   
     <script src="../public/js/funciones_tablas.js"></script>
     <script src="../public/js/jquery.js"></script>
-    
+    <script src="../public/js/pager.js"></script>
     <script type="text/javascript"> 
         
         let s_s=document.getElementById('select_sucursal');
@@ -323,43 +324,81 @@
         
         var sucursal = "";
         var categoria = "";
-        var nreg = "";
+        var nre = "";
         var npage = 0;
+        
+        function validar_products(){
+            
+            if(products.length == 0 || typeof products == "undefined"){
+                products.push("null");
+            }else{
+                if(products.length > 1 && products[0]=="null"){
+                    products.splice(0,1);
+                }
+            }
+        }
         
         window.onload = function(){
 
-            nreg = s_r.options[s_r.selectedIndex].text;
+            nre = s_r.options[s_r.selectedIndex].text;
             sucursal = s_s.options[s_s.selectedIndex].text;
             categoria = s_c.options[s_c.selectedIndex].text;
             
-            get_productosAlm("null", nreg, npage, sucursal, categoria);
+            key.value = "";
+            npage = 0;
+            
+            validar_products();
+            
+            get_productosAlm("null", nre, npage, sucursal, categoria, products);
 
+//            console.log(products)
+            
+            
         }
         
         key.addEventListener('keyup', (e)=>{
            
-            get_productosAlm(key.value, nreg, npage, sucursal, categoria);
+            validar_products();
+            npage = 0;
+            
+            
+            get_productosAlm(key.value, nre, npage, sucursal, categoria, products);
             
         });
         
         s_r.addEventListener('change', (e)=>{
             
-            nreg = s_r.options[s_r.selectedIndex].text;
-            get_productosAlm("null", nreg, npage, sucursal, categoria);
+            nre = s_r.options[s_r.selectedIndex].text;
+            npage = 0;
+            
+            
+            validar_products();
+            get_productosAlm("null", nre, npage, sucursal, categoria, products);
             
         })
         
         s_s.addEventListener('change', (e)=>{
             
-            sucursale = s_s.options[s_s.selectedIndex].text;
-            get_productosAlm(key.value, nreg, npage, sucursal, categoria);
+            sucursal = s_s.options[s_s.selectedIndex].text;
+            
+            key.value = "";
+            npage = 0;
+        
+            validar_products();
+            get_productosAlm(key.value, nre, npage, sucursal, categoria, products);
             
         })
         
         s_c.addEventListener('change', (e)=>{
             
             categoria = s_c.options[s_c.selectedIndex].text;
-            get_productosAlm(key.value, nreg, npage, sucursal, categoria);
+            
+            key.value = "";
+            npage = 0;
+            
+            validar_products();
+            
+            get_productosAlm(key.value, nre, npage, sucursal, categoria, products);
             
         })
         

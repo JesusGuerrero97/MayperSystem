@@ -36,7 +36,7 @@ function get_pager(nreg){
 
 }
 
-function get_productosAlm(busqueda, nr, np, suc, cat){
+function get_productosAlm(busqueda, nr, np, suc, cat, products){
     $.ajax({
     url: '../modelo/tabla.php',
     type: 'POST',
@@ -48,10 +48,13 @@ function get_productosAlm(busqueda, nr, np, suc, cat){
         nregistros: nr,
         npages: np,
         categoria: cat,
-        suc: suc
+        suc: suc,
+        prod: products
     },
     }).done(function(resultado){
         $("#tabla").html(resultado);
+        pager("get_productosAlm");
+        cargar_script_table();
     })
     
     

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('../modelo/inventario.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../public  /css/estilo.css">
     <link rel="stylesheet" href="../public/css/modal.css">
     <link rel="stylesheet" href="../public/css/p_administrativo.css">
+<!--    <link rel="stylesheet" href="../public/css/inventario.css">-->
     
     <style type="text/css">
         .image-profile{
@@ -128,7 +130,7 @@
 <!--            CONTENEDOR 2-->
             
             <div class="content">
-            hola div 2
+                
             </div>
         </div>
   </body>
@@ -136,6 +138,69 @@
     <script src="../Public/js/p_tabs_menus.js"></script>
     <script src="../public/js/funciones_tablas.js"></script>
     <script src="../public/js/jquery.js"></script>
-    
+    <script src="../public/js/busquedas.js"></script>
     <script src="../public/js/pager.js"></script>
+    
+    <script type="text/javascript">
+        
+        
+        var s_t = document.getElementById('select_tipo');
+        var s_s = document.getElementById('select_status');
+        var s_r = document.getElementById('select_registros');
+        var btn_search = document.getElementById('buscar');
+        
+        let tipo = "";
+        let status = "";
+        let nre = s_r.options[s_r.selectedIndex].text;
+        let npage =0;//= (page.firstChild.text)-1;
+        window.onload = function(){
+            
+            tipo = s_t.options[s_t.selectedIndex].text;
+            status = s_s.options[s_s.selectedIndex].text;
+
+            get_solicitudes(null, nre, npage, tipo, status);
+
+        }
+        
+        s_t.addEventListener('change', (e)=>{
+            tipo = s_t.options[s_t.selectedIndex].text;
+            btn_search.value = "";
+            npage = 0;
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        s_s.addEventListener('change', (e)=>{
+            status = s_s.options[s_s.selectedIndex].text;
+            btn_search.value = "";
+            npage = 0;
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        s_s.addEventListener('change', (e)=>{
+            status = s_s.options[s_s.selectedIndex].text;
+            btn_search.value = "";
+            npage = 0;
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        s_r.addEventListener('change', (e)=>{
+            nre = s_r.options[s_r.selectedIndex].text;
+            npage = 0;
+            
+            get_solicitudes(null, nre, npage, tipo, status);
+        })
+        
+        btn_search.addEventListener('keyup', (e)=>{
+            var busqueda = btn_search.value;
+            npage = 0;
+                
+            get_solicitudes(busqueda, nre, npage, tipo, status);
+        
+            
+        });
+        
+    </script>
 </html>

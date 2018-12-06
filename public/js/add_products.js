@@ -1,18 +1,20 @@
+var products = new Array();
 
-
-window.onload = function(){
- const table = document.getElementById('table');   
-    
-    table.addEventListener('click', (e)=>{
+function cargar_script_table(){
+    if(document.getElementById('table')){
+        const table = document.getElementById('table');
+        
+        table.addEventListener('click', (e)=>{
    
         if(e.target.classList.contains('btn_table')){
 
-            console.log("hd");
-            e.target.classList.add("checked");
-            add_product_to_list(e.target.parentElement.parentElement.cloneNode(true))
-        }
-    
-    });
+                e.target.classList.add("checked");
+                add_product_to_list(e.target.parentElement.parentElement.cloneNode(true))
+            }
+
+        });
+        
+    }   
 }
 
 
@@ -38,13 +40,22 @@ function add_product_to_list(node){
         var p = document.createElement("p");
         var p1 = document.createElement("p");
         var p2 = document.createElement("button");
+        var p3 = document.createElement("p");
         p.innerHTML = node.childNodes[2].firstChild.nodeValue;
         p1.innerHTML = node.childNodes[1].firstChild.nodeValue;
         p2.innerHTML = "X";
+        p3.innerHTML= node.childNodes[5].value;
+    
+        p3.style.display = 'none';
+    
+    //guardar en array todos los productos cargados
+        products.push(node.childNodes[5].value);
+    
     
         key_product.appendChild(p);
         name_product.appendChild(p1);
         delete_product.appendChild(p2);
+        delete_product.appendChild(p3);
     
         first_pane_input.appendChild(key_product);
         first_pane_input.appendChild(name_product);
@@ -52,6 +63,9 @@ function add_product_to_list(node){
     
         list.appendChild(first_pane_input);
         
+    
+//    console.log(products)
+    validar_products();
 }
 
 
@@ -63,6 +77,20 @@ function add_product_to_list(node){
         if(e.target.parentElement.classList.contains("delete_product")){
         
             e.target.parentElement.parentElement.parentElement.removeChild(e.target.parentElement.parentElement);
+            
+            products.forEach(function(element, index){
+                if(element == e.target.parentElement.lastChild.textContent){
+                    
+                    products.splice(index, 1);
+
+                    
+                    validar_products();
+                    
+                    get_productosAlm(key.value, nre, npage, sucursal, categoria, products);
+                }
+            })
+            
+//            console.log(products);
         }
         
     });
