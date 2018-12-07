@@ -220,13 +220,14 @@ div.ce
     min-height: 78vh;
     height: auto;
      /*77.2vh*/
-    width: 100%;
+    width: 80%;
     background-color: white;
     display: inline-block;
     background-size: cover;
     float: left;
     position: absolute;
     display: none;
+    margin-left: 10%;
 }
 .content-active{
     display: inline-block;

@@ -153,6 +153,7 @@ $(document).ready(function(){
             if(json)
             {
               modalAdd.style.display="block";
+              document.getElementsByName('Id_productos')[0].value=json.Id_productos;
               document.getElementsByName('Serie')[0].value=json.Serie;
               document.getElementsByName('Clave')[0].value=json.Clave;
               document.getElementsByName('Marca')[0].value=json.Marca;
@@ -164,6 +165,24 @@ $(document).ready(function(){
               document.getElementsByName('Id_status')[0].selectedIndex=json.Id_status;
               document.getElementsByName('Id_sucursal')[0].selectedIndex=json.Id_status;
               document.getElementsByClassName('agregar')[0].value="Editar";
+              document.getElementById('opcion').value="Editar";
+
             }
           })
+        }
+        function cleanInputs()
+        {
+          document.getElementsByName('Id_productos')[0].value="";
+          document.getElementsByName('Serie')[0].value="";
+          document.getElementsByName('Clave')[0].value="";
+          document.getElementsByName('Marca')[0].value="";
+          document.getElementsByName('Modelo')[0].value="";
+          document.getElementsByName('Software')[0].value="";
+          document.getElementsByName('Accesorios')[0].value="";
+          document.getElementsByName('Id_categoria')[0].selectedIndex=0;
+          document.getElementsByName('Id_proveedor')[0].selectedIndex=0;
+          document.getElementsByName('Id_status')[0].selectedIndex=0;
+          document.getElementsByName('Id_sucursal')[0].selectedIndex=0;
+          document.getElementsByClassName('agregar')[0].value="Agregar";
+          document.getElementById('opcion').value="Agregar";
         }

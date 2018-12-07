@@ -85,6 +85,7 @@
                   <div class="modal-body">
                     <div class="container-add">
                         <form class="frm" action="../controlador/addProductos.php" method="post">
+                          <input type="hidden" name="Id_productos" value="">
                           <input class="inputadd" type="text" name="Serie" placeholder="Serie del producto">
                           <input class="inputadd" type="text" name="Clave" placeholder="Clave">
                           <input class="inputadd" type="text" name="Marca" placeholder="Marca">
@@ -122,8 +123,8 @@
                             } ?>
                           </select>
                           <input class="agregar" type="submit" value="Agregar">
-                          <input class="cancelar" type="button" value="Cancelar">
-                          <input type="hidden" name="opcion" value="Aceptar">
+                          <input id="cancelar" class="cancelar" type="button" value="Cancelar">
+                          <input type="hidden" id="opcion" name="opcion" value="Aceptar">
                         </form>
                     </div>
                   </div>
