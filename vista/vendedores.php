@@ -83,7 +83,7 @@
         <div class="content content-active">
             <div class="main_content">
                 <section class="content_top">
-                    <h3>Solicitar venta</h3>
+                    <h3>Solicitar ventas/demos</h3>
                 </section>
                 
                 <section class="content_sv">

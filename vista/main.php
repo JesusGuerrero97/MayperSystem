@@ -87,7 +87,7 @@ session_start();
                     <figure>
                         <img src="../public/img/saleman_icon.png" alt="">
                         <figcaption>
-                            Vendedores
+                            Asesores
                         </figcaption>
                     </figure>
                 </div>
